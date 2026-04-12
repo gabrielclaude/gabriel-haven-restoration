@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+import ImageUpload from "@/components/ImageUpload";
 
 const TipTapEditor = dynamic(() => import("@/components/TipTapEditor"), {
   ssr: false,
@@ -110,30 +111,31 @@ export default function NewPostPage() {
 
           {/* Featured Image */}
           <div>
-            <label
-              htmlFor="featuredImage"
-              className="block text-sm font-medium mb-2 text-[var(--color-primary-dark)]"
-            >
-              Featured Image URL
+            <label className="block text-sm font-medium mb-2 text-[var(--color-primary-dark)]">
+              Featured Image
             </label>
-            <input
-              id="featuredImage"
-              type="url"
-              value={featuredImageUrl}
-              onChange={(e) => setFeaturedImageUrl(e.target.value)}
-              placeholder="https://example.com/image.jpg"
-            />
-            {featuredImageUrl && (
-              <div className="mt-2">
-                <img
-                  src={featuredImageUrl}
-                  alt="Preview"
-                  className="max-h-40 rounded-lg object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
+
+            {featuredImageUrl ? (
+              <div className="space-y-3">
+                <div className="relative">
+                  <img
+                    src={featuredImageUrl}
+                    alt="Featured"
+                    className="max-h-48 rounded-lg object-cover"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setFeaturedImageUrl("")}
+                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
               </div>
+            ) : (
+              <ImageUpload onUpload={(url) => setFeaturedImageUrl(url)} />
             )}
           </div>
 
