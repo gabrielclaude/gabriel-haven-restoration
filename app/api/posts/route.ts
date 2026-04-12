@@ -6,6 +6,9 @@ import slugify from "slugify";
 import { desc } from "drizzle-orm";
 
 export async function GET() {
+  if (!db) {
+    return NextResponse.json({ error: "Database not configured" }, { status: 503 });
+  }
   try {
     const allPosts = await db.select().from(posts).orderBy(desc(posts.createdAt));
     return NextResponse.json(allPosts);
@@ -16,6 +19,9 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  if (!db) {
+    return NextResponse.json({ error: "Database not configured" }, { status: 503 });
+  }
   try {
     const session = await auth();
     if (!session) {
