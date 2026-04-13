@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-type DeerType = "whitetail" | "mule" | "hybrid";
+type DeerType = "gallop" | "bound" | "banking";
 
 interface Deer {
   id: number;
@@ -13,368 +13,369 @@ interface Deer {
   type: DeerType;
 }
 
-// White-tailed Deer - fast galloping
-function WhitetailDeer() {
+// No. 1 GALLOP - Fast running deer with full leg extension
+function GallopingDeer() {
   return (
-    <svg viewBox="0 0 140 90" className="deer-svg">
-      {/* Frame 1 - Extended gallop */}
+    <svg viewBox="0 0 120 80" className="deer-svg">
+      {/* Frame A - Front legs forward, back legs back */}
       <g className="frame frame-1">
-        {/* Body */}
-        <ellipse cx="70" cy="40" rx="32" ry="18" fill="#C4875A" />
-        {/* White underbelly */}
-        <ellipse cx="70" cy="48" rx="28" ry="10" fill="#F5F5DC" />
-        {/* Neck */}
-        <path d="M95,32 Q105,22 108,18" stroke="#C4875A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        {/* Head */}
-        <ellipse cx="112" cy="16" rx="10" ry="7" fill="#C4875A" />
+        {/* Body - slender fawn shape */}
+        <ellipse cx="55" cy="35" rx="25" ry="14" fill="#C9A86C" />
+        {/* Lighter underbelly */}
+        <ellipse cx="55" cy="40" rx="20" ry="8" fill="#E8D5B5" />
+        {/* Neck - curved elegantly */}
+        <path d="M75,30 Q85,20 88,12" stroke="#C9A86C" strokeWidth="10" fill="none" strokeLinecap="round" />
+        {/* Head - delicate deer head */}
+        <ellipse cx="92" cy="10" rx="8" ry="6" fill="#C9A86C" />
         {/* Snout */}
-        <ellipse cx="122" cy="18" rx="5" ry="3" fill="#A06840" />
-        {/* Ear */}
-        <ellipse cx="108" cy="8" rx="3" ry="6" fill="#C4875A" />
-        {/* Antlers */}
-        <path d="M106,6 L102,-2 L98,2 M102,-2 L100,-8 M106,6 L108,-1 L112,3 M108,-1 L110,-7" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
+        <ellipse cx="100" cy="12" rx="4" ry="2.5" fill="#8B7355" />
+        {/* Nose */}
+        <circle cx="103" cy="12" r="1.5" fill="#333" />
+        {/* Ear - alert, forward */}
+        <ellipse cx="88" cy="3" rx="3" ry="7" fill="#C9A86C" transform="rotate(-15 88 3)" />
+        <ellipse cx="88" cy="3" rx="1.5" ry="5" fill="#E8D5B5" transform="rotate(-15 88 3)" />
         {/* Eye */}
-        <circle cx="115" cy="14" r="1.5" fill="#222" />
-        {/* White tail - raised */}
-        <ellipse cx="36" cy="35" rx="6" ry="8" fill="white" />
-        {/* Legs - extended gallop */}
-        <path d="M48,54 L30,75 L28,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M58,55 L70,72 L72,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M82,54 L75,75 L73,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M92,52 L110,68 L118,75" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <circle cx="94" cy="8" r="2" fill="#222" />
+        <circle cx="94.5" cy="7.5" r="0.5" fill="#fff" />
+        {/* Small tail - up */}
+        <ellipse cx="28" cy="32" rx="4" ry="5" fill="#C9A86C" transform="rotate(-20 28 32)" />
+        {/* Front legs - stretched forward */}
+        <path d="M70,44 Q82,52 90,65 L92,72" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M65,46 Q75,55 82,68 L84,75" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        {/* Back legs - stretched back */}
+        <path d="M42,44 Q32,55 25,68 L22,75" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M38,46 Q28,58 20,70 L17,77" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
         {/* Hooves */}
-        <circle cx="28" cy="83" r="2" fill="#222" />
-        <circle cx="72" cy="83" r="2" fill="#222" />
-        <circle cx="73" cy="83" r="2" fill="#222" />
-        <circle cx="118" cy="76" r="2" fill="#222" />
+        <ellipse cx="92" cy="74" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="84" cy="77" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="22" cy="77" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="17" cy="79" rx="2" ry="1.5" fill="#4A3728" />
       </g>
 
-      {/* Frame 2 - Legs coming together */}
+      {/* Frame B - Suspended in air, legs tucking */}
       <g className="frame frame-2">
-        <ellipse cx="70" cy="38" rx="32" ry="18" fill="#C4875A" />
-        <ellipse cx="70" cy="46" rx="28" ry="10" fill="#F5F5DC" />
-        <path d="M95,30 Q105,20 108,16" stroke="#C4875A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="112" cy="14" rx="10" ry="7" fill="#C4875A" />
-        <ellipse cx="122" cy="16" rx="5" ry="3" fill="#A06840" />
-        <ellipse cx="108" cy="6" rx="3" ry="6" fill="#C4875A" />
-        <path d="M106,4 L102,-4 L98,0 M102,-4 L100,-10 M106,4 L108,-3 L112,1 M108,-3 L110,-9" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="115" cy="12" r="1.5" fill="#222" />
-        <ellipse cx="36" cy="33" rx="6" ry="8" fill="white" />
-        {/* Legs - tucking under */}
-        <path d="M50,52 L45,70 L42,80" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M60,53 L62,72 L64,80" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M80,52 L82,72 L84,80" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M90,50 L95,68 L98,78" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="42" cy="81" r="2" fill="#222" />
-        <circle cx="64" cy="81" r="2" fill="#222" />
-        <circle cx="84" cy="81" r="2" fill="#222" />
-        <circle cx="98" cy="79" r="2" fill="#222" />
+        <ellipse cx="55" cy="32" rx="25" ry="14" fill="#C9A86C" />
+        <ellipse cx="55" cy="37" rx="20" ry="8" fill="#E8D5B5" />
+        <path d="M75,27 Q85,17 90,10" stroke="#C9A86C" strokeWidth="10" fill="none" strokeLinecap="round" />
+        <ellipse cx="94" cy="8" rx="8" ry="6" fill="#C9A86C" />
+        <ellipse cx="102" cy="10" rx="4" ry="2.5" fill="#8B7355" />
+        <circle cx="105" cy="10" r="1.5" fill="#333" />
+        <ellipse cx="90" cy="1" rx="3" ry="7" fill="#C9A86C" transform="rotate(-10 90 1)" />
+        <ellipse cx="90" cy="1" rx="1.5" ry="5" fill="#E8D5B5" transform="rotate(-10 90 1)" />
+        <circle cx="96" cy="6" r="2" fill="#222" />
+        <circle cx="96.5" cy="5.5" r="0.5" fill="#fff" />
+        <ellipse cx="28" cy="29" rx="4" ry="5" fill="#C9A86C" transform="rotate(-25 28 29)" />
+        {/* Legs tucking under body */}
+        <path d="M68,42 Q72,50 74,60 L74,68" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M62,44 Q65,52 66,62 L66,70" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M45,42 Q42,52 40,62 L38,70" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M40,44 Q36,54 34,64 L32,72" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <ellipse cx="74" cy="70" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="66" cy="72" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="38" cy="72" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="32" cy="74" rx="2" ry="1.5" fill="#4A3728" />
       </g>
 
-      {/* Frame 3 - Legs crossed under */}
+      {/* Frame C - Legs gathered under, body compressed */}
       <g className="frame frame-3">
-        <ellipse cx="70" cy="35" rx="32" ry="18" fill="#C4875A" />
-        <ellipse cx="70" cy="43" rx="28" ry="10" fill="#F5F5DC" />
-        <path d="M95,27 Q105,17 108,13" stroke="#C4875A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="112" cy="11" rx="10" ry="7" fill="#C4875A" />
-        <ellipse cx="122" cy="13" rx="5" ry="3" fill="#A06840" />
-        <ellipse cx="108" cy="3" rx="3" ry="6" fill="#C4875A" />
-        <path d="M106,1 L102,-7 L98,-3 M102,-7 L100,-13 M106,1 L108,-6 L112,-2 M108,-6 L110,-12" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="115" cy="9" r="1.5" fill="#222" />
-        <ellipse cx="36" cy="30" rx="6" ry="8" fill="white" />
-        {/* Legs - bunched under body */}
-        <path d="M55,50 L52,68 L50,78" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M62,50 L65,68 L68,78" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M78,50 L75,68 L72,78" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M85,48 L88,66 L90,76" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="50" cy="79" r="2" fill="#222" />
-        <circle cx="68" cy="79" r="2" fill="#222" />
-        <circle cx="72" cy="79" r="2" fill="#222" />
-        <circle cx="90" cy="77" r="2" fill="#222" />
+        <ellipse cx="55" cy="34" rx="24" ry="15" fill="#C9A86C" />
+        <ellipse cx="55" cy="40" rx="19" ry="9" fill="#E8D5B5" />
+        <path d="M74,28 Q82,18 86,12" stroke="#C9A86C" strokeWidth="10" fill="none" strokeLinecap="round" />
+        <ellipse cx="90" cy="10" rx="8" ry="6" fill="#C9A86C" />
+        <ellipse cx="98" cy="12" rx="4" ry="2.5" fill="#8B7355" />
+        <circle cx="101" cy="12" r="1.5" fill="#333" />
+        <ellipse cx="86" cy="3" rx="3" ry="7" fill="#C9A86C" transform="rotate(-5 86 3)" />
+        <ellipse cx="86" cy="3" rx="1.5" ry="5" fill="#E8D5B5" transform="rotate(-5 86 3)" />
+        <circle cx="92" cy="8" r="2" fill="#222" />
+        <circle cx="92.5" cy="7.5" r="0.5" fill="#fff" />
+        <ellipse cx="30" cy="32" rx="4" ry="5" fill="#C9A86C" transform="rotate(-15 30 32)" />
+        {/* All legs bunched under */}
+        <path d="M60,46 Q58,58 55,70" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M55,48 Q52,60 50,72" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M50,46 Q48,58 46,70" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M45,48 Q43,60 42,72" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <ellipse cx="55" cy="72" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="50" cy="74" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="46" cy="72" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="42" cy="74" rx="2" ry="1.5" fill="#4A3728" />
       </g>
 
-      {/* Frame 4 - Pushing off */}
+      {/* Frame D - Pushing off, back legs extending */}
       <g className="frame frame-4">
-        <ellipse cx="70" cy="38" rx="32" ry="18" fill="#C4875A" />
-        <ellipse cx="70" cy="46" rx="28" ry="10" fill="#F5F5DC" />
-        <path d="M95,30 Q105,20 108,16" stroke="#C4875A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="112" cy="14" rx="10" ry="7" fill="#C4875A" />
-        <ellipse cx="122" cy="16" rx="5" ry="3" fill="#A06840" />
-        <ellipse cx="108" cy="6" rx="3" ry="6" fill="#C4875A" />
-        <path d="M106,4 L102,-4 L98,0 M102,-4 L100,-10 M106,4 L108,-3 L112,1 M108,-3 L110,-9" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="115" cy="12" r="1.5" fill="#222" />
-        <ellipse cx="36" cy="33" rx="6" ry="8" fill="white" />
-        {/* Legs - pushing back */}
-        <path d="M48,52 L35,72 L30,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M58,53 L50,75 L45,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M82,52 L90,70 L95,78" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M92,50 L105,65 L112,72" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="30" cy="83" r="2" fill="#222" />
-        <circle cx="45" cy="83" r="2" fill="#222" />
-        <circle cx="95" cy="79" r="2" fill="#222" />
-        <circle cx="112" cy="73" r="2" fill="#222" />
-      </g>
-
-      {/* Frame 5 - Full extension again */}
-      <g className="frame frame-5">
-        <ellipse cx="70" cy="40" rx="32" ry="18" fill="#C4875A" />
-        <ellipse cx="70" cy="48" rx="28" ry="10" fill="#F5F5DC" />
-        <path d="M95,32 Q105,22 108,18" stroke="#C4875A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="112" cy="16" rx="10" ry="7" fill="#C4875A" />
-        <ellipse cx="122" cy="18" rx="5" ry="3" fill="#A06840" />
-        <ellipse cx="108" cy="8" rx="3" ry="6" fill="#C4875A" />
-        <path d="M106,6 L102,-2 L98,2 M102,-2 L100,-8 M106,6 L108,-1 L112,3 M108,-1 L110,-7" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="115" cy="14" r="1.5" fill="#222" />
-        <ellipse cx="36" cy="35" rx="6" ry="8" fill="white" />
-        <path d="M45,54 L25,78 L20,85" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M55,55 L40,78 L35,85" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M85,52 L100,70 L108,78" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M95,50 L115,62 L125,68" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="20" cy="86" r="2" fill="#222" />
-        <circle cx="35" cy="86" r="2" fill="#222" />
-        <circle cx="108" cy="79" r="2" fill="#222" />
-        <circle cx="125" cy="69" r="2" fill="#222" />
+        <ellipse cx="55" cy="35" rx="25" ry="14" fill="#C9A86C" />
+        <ellipse cx="55" cy="40" rx="20" ry="8" fill="#E8D5B5" />
+        <path d="M75,30 Q85,20 88,12" stroke="#C9A86C" strokeWidth="10" fill="none" strokeLinecap="round" />
+        <ellipse cx="92" cy="10" rx="8" ry="6" fill="#C9A86C" />
+        <ellipse cx="100" cy="12" rx="4" ry="2.5" fill="#8B7355" />
+        <circle cx="103" cy="12" r="1.5" fill="#333" />
+        <ellipse cx="88" cy="3" rx="3" ry="7" fill="#C9A86C" transform="rotate(-15 88 3)" />
+        <ellipse cx="88" cy="3" rx="1.5" ry="5" fill="#E8D5B5" transform="rotate(-15 88 3)" />
+        <circle cx="94" cy="8" r="2" fill="#222" />
+        <circle cx="94.5" cy="7.5" r="0.5" fill="#fff" />
+        <ellipse cx="28" cy="32" rx="4" ry="5" fill="#C9A86C" transform="rotate(-20 28 32)" />
+        {/* Front legs reaching, back legs pushing */}
+        <path d="M72,44 Q80,50 86,60 L88,68" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M66,45 Q74,52 80,64 L82,72" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M40,44 Q30,58 22,72 L18,78" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <path d="M36,46 Q26,60 18,74 L14,80" stroke="#B8956A" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <ellipse cx="88" cy="70" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="82" cy="74" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="18" cy="80" rx="2" ry="1.5" fill="#4A3728" />
+        <ellipse cx="14" cy="82" rx="2" ry="1.5" fill="#4A3728" />
       </g>
     </svg>
   );
 }
 
-// Mule Deer - walking/trotting
-function MuleDeer() {
+// No. 2 BOUND - Hopping/bounding motion
+function BoundingDeer() {
   return (
-    <svg viewBox="0 0 120 100" className="deer-svg">
-      {/* Frame 1 */}
+    <svg viewBox="0 0 100 90" className="deer-svg">
+      {/* Frame A - Gathered, about to spring */}
       <g className="frame frame-1">
-        <ellipse cx="60" cy="45" rx="28" ry="20" fill="#A0785A" />
-        <ellipse cx="60" cy="55" rx="24" ry="12" fill="#F5F5DC" />
-        <path d="M82,38 Q88,28 90,22" stroke="#A0785A" strokeWidth="14" fill="none" strokeLinecap="round" />
-        <ellipse cx="94" cy="18" rx="10" ry="8" fill="#A0785A" />
-        <ellipse cx="104" cy="20" rx="5" ry="3" fill="#806050" />
-        <ellipse cx="88" cy="8" rx="4" ry="8" fill="#A0785A" />
-        <ellipse cx="96" cy="10" rx="4" ry="7" fill="#A0785A" />
-        {/* Larger mule deer antlers */}
-        <path d="M86,4 L80,-8 L76,-2 M80,-8 L78,-16 L74,-10 M80,-8 L84,-14" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M94,5 L100,-7 L104,-1 M100,-7 L102,-15 L106,-9 M100,-7 L96,-13" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <circle cx="98" cy="16" r="2" fill="#222" />
-        <ellipse cx="32" cy="50" rx="4" ry="3" fill="#333" />
-        {/* Walking legs */}
-        <path d="M42,62 L38,80 L36,90" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M52,64 L58,82 L60,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M68,63 L64,82 L62,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M78,60 L82,78 L85,88" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="36" cy="92" r="3" fill="#222" />
-        <ellipse cx="60" cy="94" r="3" fill="#222" />
-        <ellipse cx="62" cy="94" r="3" fill="#222" />
-        <ellipse cx="85" cy="90" r="3" fill="#222" />
+        <ellipse cx="50" cy="42" rx="22" ry="16" fill="#C9A86C" />
+        <ellipse cx="50" cy="50" rx="18" ry="10" fill="#E8D5B5" />
+        <path d="M68,36 Q75,26 78,18" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="82" cy="15" rx="7" ry="5.5" fill="#C9A86C" />
+        <ellipse cx="89" cy="17" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="91" cy="17" r="1.2" fill="#333" />
+        <ellipse cx="78" cy="8" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-10 78 8)" />
+        <ellipse cx="78" cy="8" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-10 78 8)" />
+        <circle cx="84" cy="13" r="1.8" fill="#222" />
+        <circle cx="84.5" cy="12.5" r="0.4" fill="#fff" />
+        <ellipse cx="28" cy="40" rx="3" ry="4" fill="#C9A86C" />
+        {/* Legs gathered under */}
+        <path d="M58,55 Q56,68 54,78" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M52,56 Q50,70 48,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M44,55 Q42,68 40,78" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M38,54 Q36,66 34,76" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="54" cy="80" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="48" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="40" cy="80" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="34" cy="78" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 2 */}
+      {/* Frame B - Launching up */}
       <g className="frame frame-2">
-        <ellipse cx="60" cy="45" rx="28" ry="20" fill="#A0785A" />
-        <ellipse cx="60" cy="55" rx="24" ry="12" fill="#F5F5DC" />
-        <path d="M82,38 Q88,28 90,22" stroke="#A0785A" strokeWidth="14" fill="none" strokeLinecap="round" />
-        <ellipse cx="94" cy="18" rx="10" ry="8" fill="#A0785A" />
-        <ellipse cx="104" cy="20" rx="5" ry="3" fill="#806050" />
-        <ellipse cx="88" cy="8" rx="4" ry="8" fill="#A0785A" />
-        <ellipse cx="96" cy="10" rx="4" ry="7" fill="#A0785A" />
-        <path d="M86,4 L80,-8 L76,-2 M80,-8 L78,-16 L74,-10 M80,-8 L84,-14" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M94,5 L100,-7 L104,-1 M100,-7 L102,-15 L106,-9 M100,-7 L96,-13" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <circle cx="98" cy="16" r="2" fill="#222" />
-        <ellipse cx="32" cy="50" rx="4" ry="3" fill="#333" />
-        <path d="M42,62 L44,82 L45,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M52,64 L48,82 L46,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M68,63 L72,82 L74,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M78,60 L76,80 L75,90" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="45" cy="94" r="3" fill="#222" />
-        <ellipse cx="46" cy="94" r="3" fill="#222" />
-        <ellipse cx="74" cy="94" r="3" fill="#222" />
-        <ellipse cx="75" cy="92" r="3" fill="#222" />
+        <ellipse cx="50" cy="38" rx="22" ry="15" fill="#C9A86C" />
+        <ellipse cx="50" cy="45" rx="18" ry="9" fill="#E8D5B5" />
+        <path d="M68,32 Q76,22 80,14" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="84" cy="11" rx="7" ry="5.5" fill="#C9A86C" />
+        <ellipse cx="91" cy="13" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="93" cy="13" r="1.2" fill="#333" />
+        <ellipse cx="80" cy="4" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-15 80 4)" />
+        <ellipse cx="80" cy="4" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-15 80 4)" />
+        <circle cx="86" cy="9" r="1.8" fill="#222" />
+        <circle cx="86.5" cy="8.5" r="0.4" fill="#fff" />
+        <ellipse cx="28" cy="36" rx="3" ry="4" fill="#C9A86C" transform="rotate(-20 28 36)" />
+        {/* Legs pushing off */}
+        <path d="M60,50 Q65,60 68,72" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M54,52 Q58,64 60,76" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M42,52 Q38,66 34,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M36,54 Q30,68 26,82" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="68" cy="74" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="60" cy="78" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="34" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="26" cy="84" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 3 */}
+      {/* Frame C - In the air */}
       <g className="frame frame-3">
-        <ellipse cx="60" cy="45" rx="28" ry="20" fill="#A0785A" />
-        <ellipse cx="60" cy="55" rx="24" ry="12" fill="#F5F5DC" />
-        <path d="M82,38 Q88,28 90,22" stroke="#A0785A" strokeWidth="14" fill="none" strokeLinecap="round" />
-        <ellipse cx="94" cy="18" rx="10" ry="8" fill="#A0785A" />
-        <ellipse cx="104" cy="20" rx="5" ry="3" fill="#806050" />
-        <ellipse cx="88" cy="8" rx="4" ry="8" fill="#A0785A" />
-        <ellipse cx="96" cy="10" rx="4" ry="7" fill="#A0785A" />
-        <path d="M86,4 L80,-8 L76,-2 M80,-8 L78,-16 L74,-10 M80,-8 L84,-14" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M94,5 L100,-7 L104,-1 M100,-7 L102,-15 L106,-9 M100,-7 L96,-13" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <circle cx="98" cy="16" r="2" fill="#222" />
-        <ellipse cx="32" cy="50" rx="4" ry="3" fill="#333" />
-        <path d="M42,62 L48,80 L52,90" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M52,64 L50,82 L50,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M68,63 L68,82 L68,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M78,60 L72,80 L70,90" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="52" cy="92" r="3" fill="#222" />
-        <ellipse cx="50" cy="94" r="3" fill="#222" />
-        <ellipse cx="68" cy="94" r="3" fill="#222" />
-        <ellipse cx="70" cy="92" r="3" fill="#222" />
+        <ellipse cx="50" cy="32" rx="22" ry="14" fill="#C9A86C" />
+        <ellipse cx="50" cy="38" rx="18" ry="8" fill="#E8D5B5" />
+        <path d="M68,26 Q78,16 82,8" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="86" cy="5" rx="7" ry="5.5" fill="#C9A86C" />
+        <ellipse cx="93" cy="7" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="95" cy="7" r="1.2" fill="#333" />
+        <ellipse cx="82" cy="-2" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-20 82 -2)" />
+        <ellipse cx="82" cy="-2" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-20 82 -2)" />
+        <circle cx="88" cy="3" r="1.8" fill="#222" />
+        <circle cx="88.5" cy="2.5" r="0.4" fill="#fff" />
+        <ellipse cx="28" cy="30" rx="3" ry="4" fill="#C9A86C" transform="rotate(-25 28 30)" />
+        {/* All legs tucked under */}
+        <path d="M58,44 Q60,52 62,60" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M52,46 Q54,54 56,62" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M44,44 Q42,52 40,60" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M38,46 Q36,54 34,62" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="62" cy="62" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="56" cy="64" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="40" cy="62" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="34" cy="64" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 4 */}
+      {/* Frame D - Coming down */}
       <g className="frame frame-4">
-        <ellipse cx="60" cy="45" rx="28" ry="20" fill="#A0785A" />
-        <ellipse cx="60" cy="55" rx="24" ry="12" fill="#F5F5DC" />
-        <path d="M82,38 Q88,28 90,22" stroke="#A0785A" strokeWidth="14" fill="none" strokeLinecap="round" />
-        <ellipse cx="94" cy="18" rx="10" ry="8" fill="#A0785A" />
-        <ellipse cx="104" cy="20" rx="5" ry="3" fill="#806050" />
-        <ellipse cx="88" cy="8" rx="4" ry="8" fill="#A0785A" />
-        <ellipse cx="96" cy="10" rx="4" ry="7" fill="#A0785A" />
-        <path d="M86,4 L80,-8 L76,-2 M80,-8 L78,-16 L74,-10 M80,-8 L84,-14" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M94,5 L100,-7 L104,-1 M100,-7 L102,-15 L106,-9 M100,-7 L96,-13" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <circle cx="98" cy="16" r="2" fill="#222" />
-        <ellipse cx="32" cy="50" rx="4" ry="3" fill="#333" />
-        <path d="M42,62 L40,82 L38,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M52,64 L56,82 L58,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M68,63 L66,82 L65,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M78,60 L80,80 L82,90" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="38" cy="94" r="3" fill="#222" />
-        <ellipse cx="58" cy="94" r="3" fill="#222" />
-        <ellipse cx="65" cy="94" r="3" fill="#222" />
-        <ellipse cx="82" cy="92" r="3" fill="#222" />
+        <ellipse cx="50" cy="36" rx="22" ry="14" fill="#C9A86C" />
+        <ellipse cx="50" cy="43" rx="18" ry="8" fill="#E8D5B5" />
+        <path d="M68,30 Q76,20 80,12" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="84" cy="9" rx="7" ry="5.5" fill="#C9A86C" />
+        <ellipse cx="91" cy="11" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="93" cy="11" r="1.2" fill="#333" />
+        <ellipse cx="80" cy="2" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-12 80 2)" />
+        <ellipse cx="80" cy="2" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-12 80 2)" />
+        <circle cx="86" cy="7" r="1.8" fill="#222" />
+        <circle cx="86.5" cy="6.5" r="0.4" fill="#fff" />
+        <ellipse cx="28" cy="34" rx="3" ry="4" fill="#C9A86C" transform="rotate(-15 28 34)" />
+        {/* Front legs reaching down, back legs trailing */}
+        <path d="M60,48 Q64,60 66,74" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M54,50 Q56,64 58,78" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M42,48 Q38,58 36,68" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M36,50 Q32,60 30,70" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="66" cy="76" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="58" cy="80" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="36" cy="70" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="30" cy="72" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 5 */}
+      {/* Frame E - Landing */}
       <g className="frame frame-5">
-        <ellipse cx="60" cy="45" rx="28" ry="20" fill="#A0785A" />
-        <ellipse cx="60" cy="55" rx="24" ry="12" fill="#F5F5DC" />
-        <path d="M82,38 Q88,28 90,22" stroke="#A0785A" strokeWidth="14" fill="none" strokeLinecap="round" />
-        <ellipse cx="94" cy="18" rx="10" ry="8" fill="#A0785A" />
-        <ellipse cx="104" cy="20" rx="5" ry="3" fill="#806050" />
-        <ellipse cx="88" cy="8" rx="4" ry="8" fill="#A0785A" />
-        <ellipse cx="96" cy="10" rx="4" ry="7" fill="#A0785A" />
-        <path d="M86,4 L80,-8 L76,-2 M80,-8 L78,-16 L74,-10 M80,-8 L84,-14" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M94,5 L100,-7 L104,-1 M100,-7 L102,-15 L106,-9 M100,-7 L96,-13" stroke="#5D4E37" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <circle cx="98" cy="16" r="2" fill="#222" />
-        <ellipse cx="32" cy="50" rx="4" ry="3" fill="#333" />
-        <path d="M42,62 L36,80 L34,90" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M52,64 L54,82 L55,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M68,63 L70,82 L72,92" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M78,60 L84,78 L88,88" stroke="#6B5344" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="34" cy="92" r="3" fill="#222" />
-        <ellipse cx="55" cy="94" r="3" fill="#222" />
-        <ellipse cx="72" cy="94" r="3" fill="#222" />
-        <ellipse cx="88" cy="90" r="3" fill="#222" />
+        <ellipse cx="50" cy="40" rx="22" ry="15" fill="#C9A86C" />
+        <ellipse cx="50" cy="48" rx="18" ry="9" fill="#E8D5B5" />
+        <path d="M68,34 Q75,24 78,16" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="82" cy="13" rx="7" ry="5.5" fill="#C9A86C" />
+        <ellipse cx="89" cy="15" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="91" cy="15" r="1.2" fill="#333" />
+        <ellipse cx="78" cy="6" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-8 78 6)" />
+        <ellipse cx="78" cy="6" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-8 78 6)" />
+        <circle cx="84" cy="11" r="1.8" fill="#222" />
+        <circle cx="84.5" cy="10.5" r="0.4" fill="#fff" />
+        <ellipse cx="28" cy="38" rx="3" ry="4" fill="#C9A86C" />
+        {/* Front legs landed, back legs coming down */}
+        <path d="M62,54 Q62,66 60,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M56,56 Q54,68 52,82" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M44,55 Q40,68 38,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M38,56 Q34,70 32,82" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="60" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="52" cy="84" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="38" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="32" cy="84" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
     </svg>
   );
 }
 
-// Hybrid Deer - leaping/bounding
-function HybridDeer() {
+// No. 3 BANKING AT BOUND - Dramatic leaping with banking motion
+function BankingDeer() {
   return (
-    <svg viewBox="0 0 130 110" className="deer-svg">
-      {/* Frame 1 - Launching */}
+    <svg viewBox="0 0 110 85" className="deer-svg">
+      {/* Frame 1 - Crouched, about to leap */}
       <g className="frame frame-1">
-        <ellipse cx="65" cy="50" rx="30" ry="18" fill="#CD8B5A" />
-        <ellipse cx="65" cy="58" rx="26" ry="10" fill="#F5F5DC" />
-        <path d="M90,42 Q100,30 103,24" stroke="#CD8B5A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="107" cy="20" rx="9" ry="7" fill="#CD8B5A" />
-        <ellipse cx="116" cy="22" rx="4" ry="3" fill="#A06840" />
-        <ellipse cx="102" cy="12" rx="3" ry="6" fill="#CD8B5A" />
-        <path d="M100,8 L96,0 L93,4 M96,0 L94,-6 M100,8 L103,1 L106,5 M103,1 L105,-5" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="110" cy="18" r="1.5" fill="#222" />
-        <ellipse cx="35" cy="48" rx="5" ry="4" fill="white" />
-        {/* Legs pushing off ground */}
-        <path d="M45,64 L35,82 L32,95" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M55,66 L50,85 L48,98" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M75,64 L78,82 L80,95" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M85,62 L92,78 L98,90" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="32" cy="97" r="2.5" fill="#222" />
-        <circle cx="48" cy="100" r="2.5" fill="#222" />
-        <circle cx="80" cy="97" r="2.5" fill="#222" />
-        <circle cx="98" cy="92" r="2.5" fill="#222" />
+        <ellipse cx="55" cy="45" rx="24" ry="16" fill="#C9A86C" transform="rotate(-15 55 45)" />
+        <ellipse cx="55" cy="52" rx="19" ry="10" fill="#E8D5B5" transform="rotate(-15 55 52)" />
+        <path d="M72,38 Q80,28 85,20" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="88" cy="17" rx="7" ry="5" fill="#C9A86C" />
+        <ellipse cx="95" cy="19" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="97" cy="19" r="1.2" fill="#333" />
+        <ellipse cx="84" cy="10" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-20 84 10)" />
+        <ellipse cx="84" cy="10" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-20 84 10)" />
+        <circle cx="90" cy="15" r="1.8" fill="#222" />
+        <circle cx="90.5" cy="14.5" r="0.4" fill="#fff" />
+        <ellipse cx="32" cy="42" rx="3" ry="4" fill="#C9A86C" />
+        {/* Legs coiled for launch */}
+        <path d="M48,58 Q42,68 38,78" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M54,60 Q50,70 46,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M62,56 Q58,66 55,76" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M68,54 Q65,64 62,74" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="38" cy="80" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="46" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="55" cy="78" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="62" cy="76" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 2 - Rising */}
+      {/* Frame 2 - Launching, body tilting */}
       <g className="frame frame-2">
-        <ellipse cx="65" cy="42" rx="30" ry="18" fill="#CD8B5A" />
-        <ellipse cx="65" cy="50" rx="26" ry="10" fill="#F5F5DC" />
-        <path d="M90,34 Q100,22 103,16" stroke="#CD8B5A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="107" cy="12" rx="9" ry="7" fill="#CD8B5A" />
-        <ellipse cx="116" cy="14" rx="4" ry="3" fill="#A06840" />
-        <ellipse cx="102" cy="4" rx="3" ry="6" fill="#CD8B5A" />
-        <path d="M100,0 L96,-8 L93,-4 M96,-8 L94,-14 M100,0 L103,-7 L106,-3 M103,-7 L105,-13" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="110" cy="10" r="1.5" fill="#222" />
-        <ellipse cx="35" cy="40" rx="5" ry="4" fill="white" />
-        {/* Legs tucking */}
-        <path d="M48,58 L42,72 L40,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M58,60 L55,75 L54,85" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M72,58 L75,72 L78,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M82,56 L88,68 L92,78" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="40" cy="84" r="2.5" fill="#222" />
-        <circle cx="54" cy="87" r="2.5" fill="#222" />
-        <circle cx="78" cy="84" r="2.5" fill="#222" />
-        <circle cx="92" cy="80" r="2.5" fill="#222" />
+        <ellipse cx="55" cy="38" rx="24" ry="15" fill="#C9A86C" transform="rotate(-25 55 38)" />
+        <ellipse cx="55" cy="44" rx="19" ry="9" fill="#E8D5B5" transform="rotate(-25 55 44)" />
+        <path d="M72,30 Q82,18 88,10" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="92" cy="7" rx="7" ry="5" fill="#C9A86C" />
+        <ellipse cx="99" cy="9" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="101" cy="9" r="1.2" fill="#333" />
+        <ellipse cx="88" cy="0" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-30 88 0)" />
+        <ellipse cx="88" cy="0" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-30 88 0)" />
+        <circle cx="94" cy="5" r="1.8" fill="#222" />
+        <circle cx="94.5" cy="4.5" r="0.4" fill="#fff" />
+        <ellipse cx="32" cy="35" rx="3" ry="4" fill="#C9A86C" transform="rotate(-30 32 35)" />
+        {/* Back legs pushing hard, front tucking */}
+        <path d="M40,52 Q32,68 25,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M46,54 Q40,70 34,82" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M66,48 Q70,56 72,64" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M72,46 Q78,52 82,60" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="25" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="34" cy="84" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="72" cy="66" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="82" cy="62" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 3 - Peak of leap */}
+      {/* Frame 3 - Peak of leap, body arched */}
       <g className="frame frame-3">
-        <ellipse cx="65" cy="35" rx="30" ry="18" fill="#CD8B5A" />
-        <ellipse cx="65" cy="43" rx="26" ry="10" fill="#F5F5DC" />
-        <path d="M90,27 Q100,15 103,9" stroke="#CD8B5A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="107" cy="5" rx="9" ry="7" fill="#CD8B5A" />
-        <ellipse cx="116" cy="7" rx="4" ry="3" fill="#A06840" />
-        <ellipse cx="102" cy="-3" rx="3" ry="6" fill="#CD8B5A" />
-        <path d="M100,-7 L96,-15 L93,-11 M96,-15 L94,-21 M100,-7 L103,-14 L106,-10 M103,-14 L105,-20" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="110" cy="3" r="1.5" fill="#222" />
-        <ellipse cx="35" cy="33" rx="5" ry="4" fill="white" />
-        {/* Legs fully tucked */}
-        <path d="M50,50 L48,62 L46,70" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M58,52 L58,64 L58,72" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M72,50 L72,62 L72,70" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M80,48 L82,60 L84,68" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="46" cy="72" r="2.5" fill="#222" />
-        <circle cx="58" cy="74" r="2.5" fill="#222" />
-        <circle cx="72" cy="72" r="2.5" fill="#222" />
-        <circle cx="84" cy="70" r="2.5" fill="#222" />
+        <ellipse cx="55" cy="30" rx="25" ry="14" fill="#C9A86C" transform="rotate(-10 55 30)" />
+        <ellipse cx="55" cy="36" rx="20" ry="8" fill="#E8D5B5" transform="rotate(-10 55 36)" />
+        <path d="M75,24 Q85,12 92,5" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="96" cy="3" rx="7" ry="5" fill="#C9A86C" />
+        <ellipse cx="103" cy="5" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="105" cy="5" r="1.2" fill="#333" />
+        <ellipse cx="92" cy="-4" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-25 92 -4)" />
+        <ellipse cx="92" cy="-4" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-25 92 -4)" />
+        <circle cx="98" cy="1" r="1.8" fill="#222" />
+        <circle cx="98.5" cy="0.5" r="0.4" fill="#fff" />
+        <ellipse cx="30" cy="28" rx="3" ry="4" fill="#C9A86C" transform="rotate(-15 30 28)" />
+        {/* All legs stretched and trailing */}
+        <path d="M38,44 Q30,52 22,60" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M44,46 Q38,54 32,62" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M68,42 Q76,48 84,54" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M74,40 Q84,44 94,50" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="22" cy="62" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="32" cy="64" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="84" cy="56" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="94" cy="52" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 4 - Descending */}
+      {/* Frame 4 - Descending, front legs reaching */}
       <g className="frame frame-4">
-        <ellipse cx="65" cy="40" rx="30" ry="18" fill="#CD8B5A" />
-        <ellipse cx="65" cy="48" rx="26" ry="10" fill="#F5F5DC" />
-        <path d="M90,32 Q100,20 103,14" stroke="#CD8B5A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="107" cy="10" rx="9" ry="7" fill="#CD8B5A" />
-        <ellipse cx="116" cy="12" rx="4" ry="3" fill="#A06840" />
-        <ellipse cx="102" cy="2" rx="3" ry="6" fill="#CD8B5A" />
-        <path d="M100,-2 L96,-10 L93,-6 M96,-10 L94,-16 M100,-2 L103,-9 L106,-5 M103,-9 L105,-15" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="110" cy="8" r="1.5" fill="#222" />
-        <ellipse cx="35" cy="38" rx="5" ry="4" fill="white" />
-        {/* Legs extending for landing */}
-        <path d="M48,56 L40,74 L36,88" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M58,58 L52,78 L48,92" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M72,56 L78,74 L82,88" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M82,54 L92,70 L100,82" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="36" cy="90" r="2.5" fill="#222" />
-        <circle cx="48" cy="94" r="2.5" fill="#222" />
-        <circle cx="82" cy="90" r="2.5" fill="#222" />
-        <circle cx="100" cy="84" r="2.5" fill="#222" />
+        <ellipse cx="55" cy="36" rx="24" ry="14" fill="#C9A86C" transform="rotate(5 55 36)" />
+        <ellipse cx="55" cy="42" rx="19" ry="9" fill="#E8D5B5" transform="rotate(5 55 42)" />
+        <path d="M74,30 Q82,20 88,14" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="92" cy="11" rx="7" ry="5" fill="#C9A86C" />
+        <ellipse cx="99" cy="13" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="101" cy="13" r="1.2" fill="#333" />
+        <ellipse cx="88" cy="4" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-15 88 4)" />
+        <ellipse cx="88" cy="4" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-15 88 4)" />
+        <circle cx="94" cy="9" r="1.8" fill="#222" />
+        <circle cx="94.5" cy="8.5" r="0.4" fill="#fff" />
+        <ellipse cx="32" cy="34" rx="3" ry="4" fill="#C9A86C" transform="rotate(5 32 34)" />
+        {/* Front legs reaching down, back legs up */}
+        <path d="M42,50 Q38,62 35,76" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M48,52 Q46,66 44,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M64,48 Q72,54 80,62" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M70,46 Q80,50 90,56" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="35" cy="78" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="44" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="80" cy="64" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="90" cy="58" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
 
-      {/* Frame 5 - Landing */}
+      {/* Frame 5 - Landing, absorbing impact */}
       <g className="frame frame-5">
-        <ellipse cx="65" cy="48" rx="30" ry="18" fill="#CD8B5A" />
-        <ellipse cx="65" cy="56" rx="26" ry="10" fill="#F5F5DC" />
-        <path d="M90,40 Q100,28 103,22" stroke="#CD8B5A" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <ellipse cx="107" cy="18" rx="9" ry="7" fill="#CD8B5A" />
-        <ellipse cx="116" cy="20" rx="4" ry="3" fill="#A06840" />
-        <ellipse cx="102" cy="10" rx="3" ry="6" fill="#CD8B5A" />
-        <path d="M100,6 L96,-2 L93,2 M96,-2 L94,-8 M100,6 L103,-1 L106,3 M103,-1 L105,-7" stroke="#5D4E37" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <circle cx="110" cy="16" r="1.5" fill="#222" />
-        <ellipse cx="35" cy="46" rx="5" ry="4" fill="white" />
-        {/* Front legs landing, back legs following */}
-        <path d="M45,64 L38,82 L35,95" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M55,66 L48,85 L45,98" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M75,62 L82,78 L88,88" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M85,60 L96,72 L105,80" stroke="#8B6914" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <circle cx="35" cy="97" r="2.5" fill="#222" />
-        <circle cx="45" cy="100" r="2.5" fill="#222" />
-        <circle cx="88" cy="90" r="2.5" fill="#222" />
-        <circle cx="105" cy="82" r="2.5" fill="#222" />
+        <ellipse cx="55" cy="42" rx="24" ry="15" fill="#C9A86C" transform="rotate(10 55 42)" />
+        <ellipse cx="55" cy="50" rx="19" ry="10" fill="#E8D5B5" transform="rotate(10 55 50)" />
+        <path d="M72,36 Q78,26 82,20" stroke="#C9A86C" strokeWidth="9" fill="none" strokeLinecap="round" />
+        <ellipse cx="86" cy="17" rx="7" ry="5" fill="#C9A86C" />
+        <ellipse cx="93" cy="19" rx="3.5" ry="2" fill="#8B7355" />
+        <circle cx="95" cy="19" r="1.2" fill="#333" />
+        <ellipse cx="82" cy="10" rx="2.5" ry="6" fill="#C9A86C" transform="rotate(-10 82 10)" />
+        <ellipse cx="82" cy="10" rx="1.2" ry="4" fill="#E8D5B5" transform="rotate(-10 82 10)" />
+        <circle cx="88" cy="15" r="1.8" fill="#222" />
+        <circle cx="88.5" cy="14.5" r="0.4" fill="#fff" />
+        <ellipse cx="32" cy="40" rx="3" ry="4" fill="#C9A86C" transform="rotate(10 32 40)" />
+        {/* Front legs bent absorbing, back legs coming down */}
+        <path d="M44,56 Q40,68 38,80" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M50,58 Q48,70 46,82" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M62,54 Q68,64 74,74" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M68,52 Q76,62 84,72" stroke="#B8956A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <ellipse cx="38" cy="82" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="46" cy="84" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="74" cy="76" rx="1.8" ry="1.2" fill="#4A3728" />
+        <ellipse cx="84" cy="74" rx="1.8" ry="1.2" fill="#4A3728" />
       </g>
     </svg>
   );
@@ -385,14 +386,14 @@ export default function DeerAnimation() {
 
   useEffect(() => {
     const spawnDeer = () => {
-      const types: DeerType[] = ["whitetail", "mule", "hybrid"];
+      const types: DeerType[] = ["gallop", "bound", "banking"];
       const type = types[Math.floor(Math.random() * types.length)];
 
       const newDeer: Deer = {
         id: Date.now(),
-        top: Math.random() * 40 + 30,
-        duration: type === "mule" ? Math.random() * 4 + 8 : Math.random() * 3 + 5,
-        size: Math.random() * 0.3 + 0.7,
+        top: Math.random() * 35 + 35,
+        duration: type === "gallop" ? Math.random() * 2 + 4 : Math.random() * 3 + 5,
+        size: Math.random() * 0.4 + 0.6,
         direction: Math.random() > 0.5 ? "left" : "right",
         type,
       };
@@ -415,12 +416,12 @@ export default function DeerAnimation() {
 
   const renderDeer = (type: DeerType) => {
     switch (type) {
-      case "whitetail":
-        return <WhitetailDeer />;
-      case "mule":
-        return <MuleDeer />;
-      case "hybrid":
-        return <HybridDeer />;
+      case "gallop":
+        return <GallopingDeer />;
+      case "bound":
+        return <BoundingDeer />;
+      case "banking":
+        return <BankingDeer />;
     }
   };
 
@@ -454,33 +455,33 @@ export default function DeerAnimation() {
 
         .deer {
           position: absolute;
-          opacity: 0.75;
+          opacity: 0.8;
           animation-timing-function: linear;
           animation-fill-mode: forwards;
         }
 
-        .deer-whitetail {
-          width: 120px;
+        .deer-gallop {
+          width: 100px;
+          height: 67px;
+        }
+
+        .deer-bound {
+          width: 85px;
           height: 77px;
         }
 
-        .deer-mule {
-          width: 100px;
-          height: 83px;
-        }
-
-        .deer-hybrid {
-          width: 110px;
-          height: 93px;
+        .deer-banking {
+          width: 95px;
+          height: 73px;
         }
 
         .deer-right {
-          left: -150px;
+          left: -120px;
           animation-name: runRight;
         }
 
         .deer-left {
-          right: -150px;
+          right: -120px;
           animation-name: runLeft;
         }
 
@@ -498,23 +499,30 @@ export default function DeerAnimation() {
           opacity: 0;
         }
 
-        .deer-whitetail .frame-1 { animation: frame5 0.5s step-end infinite; animation-delay: 0s; }
-        .deer-whitetail .frame-2 { animation: frame5 0.5s step-end infinite; animation-delay: -0.4s; }
-        .deer-whitetail .frame-3 { animation: frame5 0.5s step-end infinite; animation-delay: -0.3s; }
-        .deer-whitetail .frame-4 { animation: frame5 0.5s step-end infinite; animation-delay: -0.2s; }
-        .deer-whitetail .frame-5 { animation: frame5 0.5s step-end infinite; animation-delay: -0.1s; }
+        /* Gallop - 4 frames, fast */
+        .deer-gallop .frame-1 { animation: frame4 0.32s step-end infinite; animation-delay: 0s; }
+        .deer-gallop .frame-2 { animation: frame4 0.32s step-end infinite; animation-delay: -0.24s; }
+        .deer-gallop .frame-3 { animation: frame4 0.32s step-end infinite; animation-delay: -0.16s; }
+        .deer-gallop .frame-4 { animation: frame4 0.32s step-end infinite; animation-delay: -0.08s; }
 
-        .deer-mule .frame-1 { animation: frame5 0.8s step-end infinite; animation-delay: 0s; }
-        .deer-mule .frame-2 { animation: frame5 0.8s step-end infinite; animation-delay: -0.64s; }
-        .deer-mule .frame-3 { animation: frame5 0.8s step-end infinite; animation-delay: -0.48s; }
-        .deer-mule .frame-4 { animation: frame5 0.8s step-end infinite; animation-delay: -0.32s; }
-        .deer-mule .frame-5 { animation: frame5 0.8s step-end infinite; animation-delay: -0.16s; }
+        /* Bound - 5 frames, moderate */
+        .deer-bound .frame-1 { animation: frame5 0.5s step-end infinite; animation-delay: 0s; }
+        .deer-bound .frame-2 { animation: frame5 0.5s step-end infinite; animation-delay: -0.4s; }
+        .deer-bound .frame-3 { animation: frame5 0.5s step-end infinite; animation-delay: -0.3s; }
+        .deer-bound .frame-4 { animation: frame5 0.5s step-end infinite; animation-delay: -0.2s; }
+        .deer-bound .frame-5 { animation: frame5 0.5s step-end infinite; animation-delay: -0.1s; }
 
-        .deer-hybrid .frame-1 { animation: frame5 0.6s step-end infinite; animation-delay: 0s; }
-        .deer-hybrid .frame-2 { animation: frame5 0.6s step-end infinite; animation-delay: -0.48s; }
-        .deer-hybrid .frame-3 { animation: frame5 0.6s step-end infinite; animation-delay: -0.36s; }
-        .deer-hybrid .frame-4 { animation: frame5 0.6s step-end infinite; animation-delay: -0.24s; }
-        .deer-hybrid .frame-5 { animation: frame5 0.6s step-end infinite; animation-delay: -0.12s; }
+        /* Banking - 5 frames, dramatic */
+        .deer-banking .frame-1 { animation: frame5 0.55s step-end infinite; animation-delay: 0s; }
+        .deer-banking .frame-2 { animation: frame5 0.55s step-end infinite; animation-delay: -0.44s; }
+        .deer-banking .frame-3 { animation: frame5 0.55s step-end infinite; animation-delay: -0.33s; }
+        .deer-banking .frame-4 { animation: frame5 0.55s step-end infinite; animation-delay: -0.22s; }
+        .deer-banking .frame-5 { animation: frame5 0.55s step-end infinite; animation-delay: -0.11s; }
+
+        @keyframes frame4 {
+          0%, 25% { opacity: 1; }
+          25.01%, 100% { opacity: 0; }
+        }
 
         @keyframes frame5 {
           0%, 20% { opacity: 1; }
@@ -522,13 +530,13 @@ export default function DeerAnimation() {
         }
 
         @keyframes runRight {
-          from { left: -150px; }
-          to { left: calc(100% + 150px); }
+          from { left: -120px; }
+          to { left: calc(100% + 120px); }
         }
 
         @keyframes runLeft {
-          from { right: -150px; }
-          to { right: calc(100% + 150px); }
+          from { right: -120px; }
+          to { right: calc(100% + 120px); }
         }
       `}</style>
     </div>
