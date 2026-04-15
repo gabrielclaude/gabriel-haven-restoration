@@ -199,7 +199,9 @@ export default function DeerAnimation() {
           className={`deer ${deer.direction === "left" ? "deer-left" : "deer-right"}`}
           style={{
             top: `${deer.top}%`,
-            animationDuration: `${deer.duration}s, ${deer.duration}s`,
+            animationDuration: `${deer.duration}s`,
+            // @ts-expect-error CSS custom property
+            "--deer-duration": `${deer.duration}s`,
           }}
         >
           <div style={{ transform: `scale(${deer.size})` }}>
@@ -231,21 +233,26 @@ export default function DeerAnimation() {
 
         .deer-right {
           left: -300px;
-          animation-name: runRight, sineWave;
+          animation-name: runRight;
         }
 
         .deer-left {
           right: -300px;
-          animation-name: runLeft, sineWave;
+          animation-name: runLeft;
+        }
+
+        .deer-right .deer-svg {
+          animation: sineWaveRight var(--deer-duration) linear forwards;
         }
 
         .deer-left .deer-svg {
-          transform: scaleX(-1);
+          animation: sineWaveLeft var(--deer-duration) linear forwards;
         }
 
         .deer-svg {
           width: 100%;
           height: 100%;
+          transform-origin: 50% 57%; /* Pivot at torso center */
         }
 
         /* Frame animation - 3 frames for smooth gallop */
@@ -272,25 +279,46 @@ export default function DeerAnimation() {
           to { right: calc(100% + 300px); }
         }
 
-        /* Sine wave vertical bounce - 4 complete waves across the screen */
-        @keyframes sineWave {
-          0% { transform: translateY(0); }
-          6.25% { transform: translateY(-60px); }
-          12.5% { transform: translateY(0); }
-          18.75% { transform: translateY(60px); }
-          25% { transform: translateY(0); }
-          31.25% { transform: translateY(-60px); }
-          37.5% { transform: translateY(0); }
-          43.75% { transform: translateY(60px); }
-          50% { transform: translateY(0); }
-          56.25% { transform: translateY(-60px); }
-          62.5% { transform: translateY(0); }
-          68.75% { transform: translateY(60px); }
-          75% { transform: translateY(0); }
-          81.25% { transform: translateY(-60px); }
-          87.5% { transform: translateY(0); }
-          93.75% { transform: translateY(60px); }
-          100% { transform: translateY(0); }
+        /* Sine wave with 40deg rotation - deer tilts up when ascending, down when descending */
+        /* 4 complete waves across the screen, rotation follows velocity (cosine of position) */
+        @keyframes sineWaveRight {
+          0% { transform: translateY(0) rotate(-40deg); }
+          6.25% { transform: translateY(-60px) rotate(0deg); }
+          12.5% { transform: translateY(0) rotate(40deg); }
+          18.75% { transform: translateY(60px) rotate(0deg); }
+          25% { transform: translateY(0) rotate(-40deg); }
+          31.25% { transform: translateY(-60px) rotate(0deg); }
+          37.5% { transform: translateY(0) rotate(40deg); }
+          43.75% { transform: translateY(60px) rotate(0deg); }
+          50% { transform: translateY(0) rotate(-40deg); }
+          56.25% { transform: translateY(-60px) rotate(0deg); }
+          62.5% { transform: translateY(0) rotate(40deg); }
+          68.75% { transform: translateY(60px) rotate(0deg); }
+          75% { transform: translateY(0) rotate(-40deg); }
+          81.25% { transform: translateY(-60px) rotate(0deg); }
+          87.5% { transform: translateY(0) rotate(40deg); }
+          93.75% { transform: translateY(60px) rotate(0deg); }
+          100% { transform: translateY(0) rotate(-40deg); }
+        }
+
+        @keyframes sineWaveLeft {
+          0% { transform: scaleX(-1) translateY(0) rotate(40deg); }
+          6.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
+          12.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
+          18.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
+          25% { transform: scaleX(-1) translateY(0) rotate(40deg); }
+          31.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
+          37.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
+          43.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
+          50% { transform: scaleX(-1) translateY(0) rotate(40deg); }
+          56.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
+          62.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
+          68.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
+          75% { transform: scaleX(-1) translateY(0) rotate(40deg); }
+          81.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
+          87.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
+          93.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
+          100% { transform: scaleX(-1) translateY(0) rotate(40deg); }
         }
       `}</style>
     </div>
