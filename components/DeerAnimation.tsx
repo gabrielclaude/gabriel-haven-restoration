@@ -34,19 +34,19 @@ function LeapingDeer() {
           {/* Neck - curved up */}
           <path d="M135,38 Q148,25 155,15" stroke="#8B6914" strokeWidth="14" fill="none" strokeLinecap="round" />
 
-          {/* Head */}
-          <ellipse cx="162" cy="12" rx="14" ry="10" fill="#8B6914" />
-          <ellipse cx="168" cy="14" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
-          <ellipse cx="175" cy="16" rx="5" ry="3.5" fill="#6B4423" />
-          <ellipse cx="179" cy="16" rx="2" ry="1.5" fill="#222" />
-
-          {/* Eye */}
-          <ellipse cx="165" cy="9" rx="3.5" ry="4.5" fill="#1a1a1a" />
-          <circle cx="166" cy="7" r="1.5" fill="#fff" />
-
-          {/* Ear */}
-          <ellipse cx="152" cy="2" rx="5" ry="13" fill="#8B6914" transform="rotate(15 152 2)" />
-          <ellipse cx="152" cy="2" rx="2.5" ry="9" fill="#FFDAB9" transform="rotate(15 152 2)" />
+          {/* Head - 30% larger */}
+          <g transform="translate(162, 12) scale(1.3) translate(-162, -12)">
+            <ellipse cx="162" cy="12" rx="14" ry="10" fill="#8B6914" />
+            <ellipse cx="168" cy="14" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+            <ellipse cx="175" cy="16" rx="5" ry="3.5" fill="#6B4423" />
+            <ellipse cx="179" cy="16" rx="2" ry="1.5" fill="#222" />
+            {/* Eye */}
+            <ellipse cx="165" cy="9" rx="3.5" ry="4.5" fill="#1a1a1a" />
+            <circle cx="166" cy="7" r="1.5" fill="#fff" />
+            {/* Ear */}
+            <ellipse cx="152" cy="2" rx="5" ry="13" fill="#8B6914" transform="rotate(15 152 2)" />
+            <ellipse cx="152" cy="2" rx="2.5" ry="9" fill="#FFDAB9" transform="rotate(15 152 2)" />
+          </g>
 
           {/* Tail - down */}
           <ellipse cx="55" cy="42" rx="5" ry="7" fill="#8B6914" transform="rotate(-20 55 42)" />
@@ -83,19 +83,19 @@ function LeapingDeer() {
           {/* Neck - extended */}
           <path d="M145,35 Q160,20 170,8" stroke="#8B6914" strokeWidth="13" fill="none" strokeLinecap="round" />
 
-          {/* Head */}
-          <ellipse cx="178" cy="5" rx="13" ry="9" fill="#8B6914" />
-          <ellipse cx="184" cy="7" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
-          <ellipse cx="191" cy="9" rx="5" ry="3.5" fill="#6B4423" />
-          <ellipse cx="195" cy="9" rx="2" ry="1.5" fill="#222" />
-
-          {/* Eye */}
-          <ellipse cx="181" cy="3" rx="3.5" ry="4.5" fill="#1a1a1a" />
-          <circle cx="182" cy="1" r="1.5" fill="#fff" />
-
-          {/* Ear - back */}
-          <ellipse cx="168" cy="-5" rx="5" ry="12" fill="#8B6914" transform="rotate(30 168 -5)" />
-          <ellipse cx="168" cy="-5" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(30 168 -5)" />
+          {/* Head - 30% larger */}
+          <g transform="translate(178, 5) scale(1.3) translate(-178, -5)">
+            <ellipse cx="178" cy="5" rx="13" ry="9" fill="#8B6914" />
+            <ellipse cx="184" cy="7" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+            <ellipse cx="191" cy="9" rx="5" ry="3.5" fill="#6B4423" />
+            <ellipse cx="195" cy="9" rx="2" ry="1.5" fill="#222" />
+            {/* Eye */}
+            <ellipse cx="181" cy="3" rx="3.5" ry="4.5" fill="#1a1a1a" />
+            <circle cx="182" cy="1" r="1.5" fill="#fff" />
+            {/* Ear - back */}
+            <ellipse cx="168" cy="-5" rx="5" ry="12" fill="#8B6914" transform="rotate(30 168 -5)" />
+            <ellipse cx="168" cy="-5" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(30 168 -5)" />
+          </g>
 
           {/* Tail - streaming */}
           <path d="M45,42 Q35,38 28,35" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
@@ -131,19 +131,19 @@ function LeapingDeer() {
         {/* Neck - extended forward */}
         <path d="M152,34 Q170,22 180,12" stroke="#8B6914" strokeWidth="12" fill="none" strokeLinecap="round" />
 
-        {/* Head */}
-        <ellipse cx="188" cy="8" rx="13" ry="9" fill="#8B6914" />
-        <ellipse cx="194" cy="10" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
-        <ellipse cx="200" cy="12" rx="5" ry="3.5" fill="#6B4423" />
-        <ellipse cx="204" cy="12" rx="2" ry="1.5" fill="#222" />
-
-        {/* Eye */}
-        <ellipse cx="191" cy="6" rx="3.5" ry="4.5" fill="#1a1a1a" />
-        <circle cx="192" cy="4" r="1.5" fill="#fff" />
-
-        {/* Ear */}
-        <ellipse cx="178" cy="-2" rx="5" ry="12" fill="#8B6914" transform="rotate(35 178 -2)" />
-        <ellipse cx="178" cy="-2" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(35 178 -2)" />
+        {/* Head - 30% larger */}
+        <g transform="translate(188, 8) scale(1.3) translate(-188, -8)">
+          <ellipse cx="188" cy="8" rx="13" ry="9" fill="#8B6914" />
+          <ellipse cx="194" cy="10" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+          <ellipse cx="200" cy="12" rx="5" ry="3.5" fill="#6B4423" />
+          <ellipse cx="204" cy="12" rx="2" ry="1.5" fill="#222" />
+          {/* Eye */}
+          <ellipse cx="191" cy="6" rx="3.5" ry="4.5" fill="#1a1a1a" />
+          <circle cx="192" cy="4" r="1.5" fill="#fff" />
+          {/* Ear */}
+          <ellipse cx="178" cy="-2" rx="5" ry="12" fill="#8B6914" transform="rotate(35 178 -2)" />
+          <ellipse cx="178" cy="-2" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(35 178 -2)" />
+        </g>
 
         {/* Tail - streaming horizontal */}
         <path d="M38,40 Q25,38 15,36" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
@@ -179,19 +179,19 @@ function LeapingDeer() {
           {/* Neck - angled down */}
           <path d="M145,42 Q158,32 165,25" stroke="#8B6914" strokeWidth="13" fill="none" strokeLinecap="round" />
 
-          {/* Head */}
-          <ellipse cx="172" cy="22" rx="13" ry="9" fill="#8B6914" />
-          <ellipse cx="178" cy="24" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
-          <ellipse cx="185" cy="26" rx="5" ry="3.5" fill="#6B4423" />
-          <ellipse cx="189" cy="26" rx="2" ry="1.5" fill="#222" />
-
-          {/* Eye */}
-          <ellipse cx="175" cy="19" rx="3.5" ry="4.5" fill="#1a1a1a" />
-          <circle cx="176" cy="17" r="1.5" fill="#fff" />
-
-          {/* Ear */}
-          <ellipse cx="162" cy="12" rx="5" ry="12" fill="#8B6914" transform="rotate(10 162 12)" />
-          <ellipse cx="162" cy="12" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(10 162 12)" />
+          {/* Head - 30% larger */}
+          <g transform="translate(172, 22) scale(1.3) translate(-172, -22)">
+            <ellipse cx="172" cy="22" rx="13" ry="9" fill="#8B6914" />
+            <ellipse cx="178" cy="24" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+            <ellipse cx="185" cy="26" rx="5" ry="3.5" fill="#6B4423" />
+            <ellipse cx="189" cy="26" rx="2" ry="1.5" fill="#222" />
+            {/* Eye */}
+            <ellipse cx="175" cy="19" rx="3.5" ry="4.5" fill="#1a1a1a" />
+            <circle cx="176" cy="17" r="1.5" fill="#fff" />
+            {/* Ear */}
+            <ellipse cx="162" cy="12" rx="5" ry="12" fill="#8B6914" transform="rotate(10 162 12)" />
+            <ellipse cx="162" cy="12" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(10 162 12)" />
+          </g>
 
           {/* Tail - up high */}
           <path d="M45,38 Q38,28 35,18" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
@@ -228,19 +228,19 @@ function LeapingDeer() {
           {/* Neck - curved down */}
           <path d="M138,48 Q150,40 158,35" stroke="#8B6914" strokeWidth="14" fill="none" strokeLinecap="round" />
 
-          {/* Head */}
-          <ellipse cx="165" cy="32" rx="13" ry="10" fill="#8B6914" />
-          <ellipse cx="171" cy="34" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
-          <ellipse cx="178" cy="36" rx="5" ry="3.5" fill="#6B4423" />
-          <ellipse cx="182" cy="36" rx="2" ry="1.5" fill="#222" />
-
-          {/* Eye */}
-          <ellipse cx="168" cy="29" rx="3.5" ry="4.5" fill="#1a1a1a" />
-          <circle cx="169" cy="27" r="1.5" fill="#fff" />
-
-          {/* Ear */}
-          <ellipse cx="155" cy="22" rx="5" ry="12" fill="#8B6914" transform="rotate(5 155 22)" />
-          <ellipse cx="155" cy="22" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(5 155 22)" />
+          {/* Head - 30% larger */}
+          <g transform="translate(165, 32) scale(1.3) translate(-165, -32)">
+            <ellipse cx="165" cy="32" rx="13" ry="10" fill="#8B6914" />
+            <ellipse cx="171" cy="34" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+            <ellipse cx="178" cy="36" rx="5" ry="3.5" fill="#6B4423" />
+            <ellipse cx="182" cy="36" rx="2" ry="1.5" fill="#222" />
+            {/* Eye */}
+            <ellipse cx="168" cy="29" rx="3.5" ry="4.5" fill="#1a1a1a" />
+            <circle cx="169" cy="27" r="1.5" fill="#fff" />
+            {/* Ear */}
+            <ellipse cx="155" cy="22" rx="5" ry="12" fill="#8B6914" transform="rotate(5 155 22)" />
+            <ellipse cx="155" cy="22" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(5 155 22)" />
+          </g>
 
           {/* Tail - high up */}
           <path d="M52,38 Q42,25 38,15" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
