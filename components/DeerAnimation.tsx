@@ -305,6 +305,8 @@ export default function DeerAnimation() {
             animationDuration: `${deer.duration}s`,
             // @ts-expect-error CSS custom property
             "--deer-duration": `${deer.duration}s`,
+            // @ts-expect-error CSS custom property
+            "--leap-duration": `${deer.duration * 0.4}s`,
           }}
         >
           <div style={{ transform: `scale(${deer.size})` }}>
@@ -363,12 +365,17 @@ export default function DeerAnimation() {
           opacity: 0;
         }
 
-        /* Each frame shows for 20% of the leap cycle (5 frames) - 2.5s total = 0.5s per frame */
-        .frame-1 { animation: frame5cycle 2.5s step-end infinite; animation-delay: 0s; }
-        .frame-2 { animation: frame5cycle 2.5s step-end infinite; animation-delay: -2.0s; }
-        .frame-3 { animation: frame5cycle 2.5s step-end infinite; animation-delay: -1.5s; }
-        .frame-4 { animation: frame5cycle 2.5s step-end infinite; animation-delay: -1.0s; }
-        .frame-5 { animation: frame5cycle 2.5s step-end infinite; animation-delay: -0.5s; }
+        /* Frames synced with leap: each leap is 40% of total duration
+           Frame 1: Push-off (0-20% of leap) - angled up
+           Frame 2: Ascending (20-40% of leap) - angled up
+           Frame 3: Peak glide (40-60% of leap) - level
+           Frame 4: Descending (60-80% of leap) - angled down
+           Frame 5: Landing (80-100% of leap) - angled down */
+        .frame-1 { animation: frame5cycle var(--leap-duration) step-end infinite; }
+        .frame-2 { animation: frame5cycle var(--leap-duration) step-end infinite; animation-delay: calc(var(--leap-duration) * -0.8); }
+        .frame-3 { animation: frame5cycle var(--leap-duration) step-end infinite; animation-delay: calc(var(--leap-duration) * -0.6); }
+        .frame-4 { animation: frame5cycle var(--leap-duration) step-end infinite; animation-delay: calc(var(--leap-duration) * -0.4); }
+        .frame-5 { animation: frame5cycle var(--leap-duration) step-end infinite; animation-delay: calc(var(--leap-duration) * -0.2); }
 
         @keyframes frame5cycle {
           0%, 20% { opacity: 1; }
@@ -385,19 +392,30 @@ export default function DeerAnimation() {
           to { right: calc(100% + 350px); }
         }
 
-        /* Vertical bounce synced with leap - 2 leaps across screen for slower, higher jumps */
+        /* Vertical bounce synced with 5-frame leap cycle - 2 leaps across screen
+           Each leap = 40% of duration, matching frame cycle:
+           0-8%: push-off (frame 1, ground to start rising)
+           8-16%: ascending (frame 2, rising)
+           16-24%: peak (frame 3, at top)
+           24-32%: descending (frame 4, falling)
+           32-40%: landing (frame 5, back to ground) */
         @keyframes leapBounceRight {
           /* Leap 1 */
           0% { transform: translateY(0); }
-          10% { transform: translateY(-80px); }
+          8% { transform: translateY(-60px); }
+          16% { transform: translateY(-140px); }
           20% { transform: translateY(-160px); }
-          30% { transform: translateY(-80px); }
+          24% { transform: translateY(-140px); }
+          32% { transform: translateY(-60px); }
           40% { transform: translateY(0); }
-          /* Leap 2 */
+          /* Pause */
           50% { transform: translateY(0); }
-          60% { transform: translateY(-80px); }
+          /* Leap 2 */
+          58% { transform: translateY(-60px); }
+          66% { transform: translateY(-140px); }
           70% { transform: translateY(-160px); }
-          80% { transform: translateY(-80px); }
+          74% { transform: translateY(-140px); }
+          82% { transform: translateY(-60px); }
           90% { transform: translateY(0); }
           100% { transform: translateY(0); }
         }
@@ -405,15 +423,20 @@ export default function DeerAnimation() {
         @keyframes leapBounceLeft {
           /* Leap 1 */
           0% { transform: scaleX(-1) translateY(0); }
-          10% { transform: scaleX(-1) translateY(-80px); }
+          8% { transform: scaleX(-1) translateY(-60px); }
+          16% { transform: scaleX(-1) translateY(-140px); }
           20% { transform: scaleX(-1) translateY(-160px); }
-          30% { transform: scaleX(-1) translateY(-80px); }
+          24% { transform: scaleX(-1) translateY(-140px); }
+          32% { transform: scaleX(-1) translateY(-60px); }
           40% { transform: scaleX(-1) translateY(0); }
-          /* Leap 2 */
+          /* Pause */
           50% { transform: scaleX(-1) translateY(0); }
-          60% { transform: scaleX(-1) translateY(-80px); }
+          /* Leap 2 */
+          58% { transform: scaleX(-1) translateY(-60px); }
+          66% { transform: scaleX(-1) translateY(-140px); }
           70% { transform: scaleX(-1) translateY(-160px); }
-          80% { transform: scaleX(-1) translateY(-80px); }
+          74% { transform: scaleX(-1) translateY(-140px); }
+          82% { transform: scaleX(-1) translateY(-60px); }
           90% { transform: scaleX(-1) translateY(0); }
           100% { transform: scaleX(-1) translateY(0); }
         }
