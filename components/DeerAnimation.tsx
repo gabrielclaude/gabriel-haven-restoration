@@ -10,153 +10,256 @@ interface Deer {
   direction: "left" | "right";
 }
 
-// Doe animation based on 3 keyframes: push-off, leap, landing
-// Size: 1.5" tall x 3" wide (144px x 288px at 96dpi) - using 2:1 aspect ratio
-function RunningDoe() {
+// 5-keyframe leaping deer animation
+// Frame 1: Push-off (compressed, angled up 40°)
+// Frame 2: Ascending (stretching, rising at 40°)
+// Frame 3: Peak glide (fully stretched, horizontal)
+// Frame 4: Descending (arching, falling at 40°)
+// Frame 5: Landing prep (compressed, angled down 40°)
+function LeapingDeer() {
   return (
-    <svg viewBox="0 -40 200 150" className="deer-svg">
-      {/* Frame 1 - Push off: back legs bunched under, front reaching forward */}
+    <svg viewBox="0 -60 200 180" className="deer-svg">
+      {/* Frame 1 - Push-off: compressed body, back legs pushing, angled up 40° */}
       <g className="frame frame-1">
-        {/* Body - brown top */}
-        <ellipse cx="100" cy="42" rx="45" ry="22" fill="#8B6914" />
-        {/* Cream underbelly */}
-        <ellipse cx="100" cy="52" rx="38" ry="14" fill="#F3CF7A" />
-        {/* Haunch muscle */}
-        <ellipse cx="65" cy="45" rx="20" ry="18" fill="#8B6914" />
-        {/* Shoulder */}
-        <ellipse cx="130" cy="40" rx="15" ry="16" fill="#8B6914" />
+        <g transform="rotate(-40 100 50)">
+          {/* Body - compressed */}
+          <ellipse cx="100" cy="45" rx="38" ry="24" fill="#8B6914" />
+          {/* Underbelly */}
+          <ellipse cx="100" cy="55" rx="32" ry="16" fill="#F3CF7A" />
+          {/* Haunch - bunched */}
+          <ellipse cx="70" cy="48" rx="22" ry="20" fill="#8B6914" />
+          {/* Shoulder */}
+          <ellipse cx="125" cy="42" rx="16" ry="18" fill="#8B6914" />
 
-        {/* Neck - elegant curve upward */}
-        <path d="M140,35 Q155,20 160,10" stroke="#8B6914" strokeWidth="14" fill="none" strokeLinecap="round" />
+          {/* Neck - curved up */}
+          <path d="M135,38 Q148,25 155,15" stroke="#8B6914" strokeWidth="14" fill="none" strokeLinecap="round" />
 
-        {/* Head */}
-        <ellipse cx="168" cy="8" rx="14" ry="10" fill="#8B6914" />
-        {/* Cream face accent */}
-        <ellipse cx="175" cy="10" rx="6" ry="5" fill="#F3CF7A" opacity="0.5" />
-        {/* Snout */}
-        <ellipse cx="182" cy="12" rx="6" ry="4" fill="#6B4423" />
-        {/* Nose */}
-        <ellipse cx="187" cy="12" rx="2" ry="1.5" fill="#222" />
+          {/* Head */}
+          <ellipse cx="162" cy="12" rx="14" ry="10" fill="#8B6914" />
+          <ellipse cx="168" cy="14" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+          <ellipse cx="175" cy="16" rx="5" ry="3.5" fill="#6B4423" />
+          <ellipse cx="179" cy="16" rx="2" ry="1.5" fill="#222" />
 
-        {/* Big eye */}
-        <ellipse cx="172" cy="6" rx="4" ry="5" fill="#1a1a1a" />
-        <circle cx="173" cy="4" r="1.5" fill="#fff" />
+          {/* Eye */}
+          <ellipse cx="165" cy="9" rx="3.5" ry="4.5" fill="#1a1a1a" />
+          <circle cx="166" cy="7" r="1.5" fill="#fff" />
 
-        {/* Large ear */}
-        <ellipse cx="158" cy="-2" rx="6" ry="14" fill="#8B6914" transform="rotate(20 158 -2)" />
-        <ellipse cx="158" cy="-2" rx="3" ry="10" fill="#FFDAB9" transform="rotate(20 158 -2)" />
+          {/* Ear */}
+          <ellipse cx="152" cy="2" rx="5" ry="13" fill="#8B6914" transform="rotate(15 152 2)" />
+          <ellipse cx="152" cy="2" rx="2.5" ry="9" fill="#FFDAB9" transform="rotate(15 152 2)" />
 
-        {/* Small tail - up */}
-        <ellipse cx="48" cy="38" rx="5" ry="6" fill="#8B6914" transform="rotate(-30 48 38)" />
-        <ellipse cx="46" cy="36" rx="3" ry="4" fill="#F3CF7A" transform="rotate(-30 46 36)" />
+          {/* Tail - down */}
+          <ellipse cx="55" cy="42" rx="5" ry="7" fill="#8B6914" transform="rotate(-20 55 42)" />
+          <ellipse cx="53" cy="40" rx="3" ry="5" fill="#F3CF7A" transform="rotate(-20 53 40)" />
 
-        {/* Back legs - bunched under, pushing */}
-        <path d="M55,58 Q45,72 40,85" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
-        <path d="M65,60 Q58,75 55,88" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+          {/* Back legs - bunched, pushing off ground */}
+          <path d="M60,65 Q50,80 48,95" stroke="#6B4423" strokeWidth="7" fill="none" strokeLinecap="round" />
+          <path d="M75,68 Q68,85 70,100" stroke="#6B4423" strokeWidth="7" fill="none" strokeLinecap="round" />
 
-        {/* Front legs - reaching forward */}
-        <path d="M130,55 Q150,65 165,78" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
-        <path d="M125,58 Q140,70 152,85" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+          {/* Front legs - lifting off */}
+          <path d="M125,60 Q135,75 140,88" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M118,62 Q125,78 128,92" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
 
-        {/* Hooves */}
-        <ellipse cx="40" cy="87" rx="3" ry="2" fill="#222" />
-        <ellipse cx="55" cy="90" rx="3" ry="2" fill="#222" />
-        <ellipse cx="165" cy="80" rx="3" ry="2" fill="#222" />
-        <ellipse cx="152" cy="87" rx="3" ry="2" fill="#222" />
+          {/* Hooves */}
+          <ellipse cx="48" cy="97" rx="3" ry="2" fill="#222" />
+          <ellipse cx="70" cy="102" rx="3" ry="2" fill="#222" />
+          <ellipse cx="140" cy="90" rx="3" ry="2" fill="#222" />
+          <ellipse cx="128" cy="94" rx="3" ry="2" fill="#222" />
+        </g>
       </g>
 
-      {/* Frame 2 - Full leap: all legs extended, suspended in air */}
+      {/* Frame 2 - Ascending: body stretching, rising at 40° */}
       <g className="frame frame-2">
-        {/* Body - stretched horizontal */}
-        <ellipse cx="100" cy="38" rx="48" ry="18" fill="#8B6914" />
-        {/* Cream underbelly */}
-        <ellipse cx="100" cy="46" rx="42" ry="12" fill="#F3CF7A" />
+        <g transform="rotate(-40 100 50)">
+          {/* Body - stretching */}
+          <ellipse cx="100" cy="42" rx="45" ry="20" fill="#8B6914" />
+          {/* Underbelly */}
+          <ellipse cx="100" cy="50" rx="38" ry="13" fill="#F3CF7A" />
+          {/* Haunch */}
+          <ellipse cx="62" cy="44" rx="20" ry="16" fill="#8B6914" />
+          {/* Shoulder */}
+          <ellipse cx="135" cy="40" rx="15" ry="15" fill="#8B6914" />
+
+          {/* Neck - extended */}
+          <path d="M145,35 Q160,20 170,8" stroke="#8B6914" strokeWidth="13" fill="none" strokeLinecap="round" />
+
+          {/* Head */}
+          <ellipse cx="178" cy="5" rx="13" ry="9" fill="#8B6914" />
+          <ellipse cx="184" cy="7" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+          <ellipse cx="191" cy="9" rx="5" ry="3.5" fill="#6B4423" />
+          <ellipse cx="195" cy="9" rx="2" ry="1.5" fill="#222" />
+
+          {/* Eye */}
+          <ellipse cx="181" cy="3" rx="3.5" ry="4.5" fill="#1a1a1a" />
+          <circle cx="182" cy="1" r="1.5" fill="#fff" />
+
+          {/* Ear - back */}
+          <ellipse cx="168" cy="-5" rx="5" ry="12" fill="#8B6914" transform="rotate(30 168 -5)" />
+          <ellipse cx="168" cy="-5" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(30 168 -5)" />
+
+          {/* Tail - streaming */}
+          <path d="M45,42 Q35,38 28,35" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
+          <ellipse cx="28" cy="35" rx="4" ry="3" fill="#F3CF7A" />
+
+          {/* Back legs - extending behind */}
+          <path d="M52,55 Q35,65 22,78" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M60,58 Q48,72 38,88" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+
+          {/* Front legs - folding under */}
+          <path d="M138,52 Q150,58 158,68" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M132,55 Q142,65 148,78" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+
+          {/* Hooves */}
+          <ellipse cx="22" cy="80" rx="3" ry="2" fill="#222" />
+          <ellipse cx="38" cy="90" rx="3" ry="2" fill="#222" />
+          <ellipse cx="158" cy="70" rx="3" ry="2" fill="#222" />
+          <ellipse cx="148" cy="80" rx="3" ry="2" fill="#222" />
+        </g>
+      </g>
+
+      {/* Frame 3 - Peak glide: fully stretched, horizontal (0°) */}
+      <g className="frame frame-3">
+        {/* Body - fully stretched */}
+        <ellipse cx="100" cy="40" rx="50" ry="17" fill="#8B6914" />
+        {/* Underbelly */}
+        <ellipse cx="100" cy="48" rx="44" ry="11" fill="#F3CF7A" />
         {/* Haunch */}
-        <ellipse cx="58" cy="40" rx="18" ry="14" fill="#8B6914" />
+        <ellipse cx="55" cy="42" rx="18" ry="14" fill="#8B6914" />
         {/* Shoulder */}
-        <ellipse cx="138" cy="36" rx="14" ry="14" fill="#8B6914" />
+        <ellipse cx="142" cy="38" rx="14" ry="14" fill="#8B6914" />
 
         {/* Neck - extended forward */}
-        <path d="M148,32 Q165,18 175,8" stroke="#8B6914" strokeWidth="12" fill="none" strokeLinecap="round" />
-
-        {/* Head - stretched forward */}
-        <ellipse cx="182" cy="6" rx="13" ry="9" fill="#8B6914" />
-        <ellipse cx="188" cy="8" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
-        <ellipse cx="195" cy="10" rx="5" ry="3.5" fill="#6B4423" />
-        <ellipse cx="199" cy="10" rx="1.8" ry="1.3" fill="#222" />
-
-        {/* Big eye */}
-        <ellipse cx="186" cy="4" rx="4" ry="5" fill="#1a1a1a" />
-        <circle cx="187" cy="2" r="1.5" fill="#fff" />
-
-        {/* Ear - back */}
-        <ellipse cx="172" cy="-4" rx="5" ry="12" fill="#8B6914" transform="rotate(35 172 -4)" />
-        <ellipse cx="172" cy="-4" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(35 172 -4)" />
-
-        {/* Tail - streaming behind */}
-        <path d="M40,38 Q30,32 22,28" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="22" cy="28" rx="4" ry="3" fill="#F3CF7A" />
-
-        {/* Back legs - fully extended behind */}
-        <path d="M48,50 Q30,60 15,72" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M55,52 Q40,65 28,78" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
-
-        {/* Front legs - fully extended forward */}
-        <path d="M145,48 Q168,55 185,65" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M140,50 Q158,62 172,75" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
-
-        {/* Hooves */}
-        <ellipse cx="15" cy="74" rx="3" ry="2" fill="#222" />
-        <ellipse cx="28" cy="80" rx="3" ry="2" fill="#222" />
-        <ellipse cx="185" cy="67" rx="3" ry="2" fill="#222" />
-        <ellipse cx="172" cy="77" rx="3" ry="2" fill="#222" />
-      </g>
-
-      {/* Frame 3 - Landing: front legs down, back legs trailing up */}
-      <g className="frame frame-3">
-        {/* Body - tilted for landing */}
-        <ellipse cx="100" cy="44" rx="46" ry="20" fill="#8B6914" transform="rotate(8 100 44)" />
-        {/* Cream underbelly */}
-        <ellipse cx="100" cy="52" rx="40" ry="13" fill="#F3CF7A" transform="rotate(8 100 52)" />
-        {/* Haunch - raised */}
-        <ellipse cx="60" cy="42" rx="18" ry="16" fill="#8B6914" />
-        {/* Shoulder - lower */}
-        <ellipse cx="135" cy="45" rx="14" ry="15" fill="#8B6914" />
-
-        {/* Neck - angled down */}
-        <path d="M145,42 Q158,30 165,22" stroke="#8B6914" strokeWidth="13" fill="none" strokeLinecap="round" />
+        <path d="M152,34 Q170,22 180,12" stroke="#8B6914" strokeWidth="12" fill="none" strokeLinecap="round" />
 
         {/* Head */}
-        <ellipse cx="172" cy="18" rx="13" ry="10" fill="#8B6914" />
-        <ellipse cx="178" cy="20" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
-        <ellipse cx="185" cy="22" rx="5" ry="3.5" fill="#6B4423" />
-        <ellipse cx="189" cy="22" rx="1.8" ry="1.3" fill="#222" />
+        <ellipse cx="188" cy="8" rx="13" ry="9" fill="#8B6914" />
+        <ellipse cx="194" cy="10" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+        <ellipse cx="200" cy="12" rx="5" ry="3.5" fill="#6B4423" />
+        <ellipse cx="204" cy="12" rx="2" ry="1.5" fill="#222" />
 
-        {/* Big eye */}
-        <ellipse cx="176" cy="15" rx="4" ry="5" fill="#1a1a1a" />
-        <circle cx="177" cy="13" r="1.5" fill="#fff" />
+        {/* Eye */}
+        <ellipse cx="191" cy="6" rx="3.5" ry="4.5" fill="#1a1a1a" />
+        <circle cx="192" cy="4" r="1.5" fill="#fff" />
 
         {/* Ear */}
-        <ellipse cx="162" cy="8" rx="5" ry="13" fill="#8B6914" transform="rotate(15 162 8)" />
-        <ellipse cx="162" cy="8" rx="2.5" ry="9" fill="#FFDAB9" transform="rotate(15 162 8)" />
+        <ellipse cx="178" cy="-2" rx="5" ry="12" fill="#8B6914" transform="rotate(35 178 -2)" />
+        <ellipse cx="178" cy="-2" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(35 178 -2)" />
 
-        {/* Tail - up high */}
-        <path d="M45,36 Q38,25 35,18" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="35" cy="18" rx="4" ry="5" fill="#F3CF7A" />
+        {/* Tail - streaming horizontal */}
+        <path d="M38,40 Q25,38 15,36" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
+        <ellipse cx="15" cy="36" rx="4" ry="3" fill="#F3CF7A" />
 
-        {/* Back legs - trailing up behind */}
-        <path d="M52,55 Q38,50 28,42" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M58,58 Q48,55 40,50" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
+        {/* Back legs - fully extended behind */}
+        <path d="M45,52 Q25,62 8,75" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
+        <path d="M52,54 Q35,68 20,85" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
 
-        {/* Front legs - landing, bent */}
-        <path d="M138,58 Q145,75 142,90" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
-        <path d="M130,60 Q135,78 130,92" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+        {/* Front legs - fully extended forward */}
+        <path d="M148,50 Q172,58 190,70" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
+        <path d="M142,52 Q162,65 178,82" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
 
         {/* Hooves */}
-        <ellipse cx="28" cy="42" rx="3" ry="2" fill="#222" />
-        <ellipse cx="40" cy="50" rx="3" ry="2" fill="#222" />
-        <ellipse cx="142" cy="92" rx="3" ry="2" fill="#222" />
-        <ellipse cx="130" cy="94" rx="3" ry="2" fill="#222" />
+        <ellipse cx="8" cy="77" rx="3" ry="2" fill="#222" />
+        <ellipse cx="20" cy="87" rx="3" ry="2" fill="#222" />
+        <ellipse cx="190" cy="72" rx="3" ry="2" fill="#222" />
+        <ellipse cx="178" cy="84" rx="3" ry="2" fill="#222" />
+      </g>
+
+      {/* Frame 4 - Descending: body arching, falling at 40° */}
+      <g className="frame frame-4">
+        <g transform="rotate(40 100 50)">
+          {/* Body - arching */}
+          <ellipse cx="100" cy="42" rx="45" ry="20" fill="#8B6914" />
+          {/* Underbelly */}
+          <ellipse cx="100" cy="50" rx="38" ry="13" fill="#F3CF7A" />
+          {/* Haunch - raised */}
+          <ellipse cx="62" cy="40" rx="18" ry="16" fill="#8B6914" />
+          {/* Shoulder */}
+          <ellipse cx="135" cy="44" rx="15" ry="15" fill="#8B6914" />
+
+          {/* Neck - angled down */}
+          <path d="M145,42 Q158,32 165,25" stroke="#8B6914" strokeWidth="13" fill="none" strokeLinecap="round" />
+
+          {/* Head */}
+          <ellipse cx="172" cy="22" rx="13" ry="9" fill="#8B6914" />
+          <ellipse cx="178" cy="24" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+          <ellipse cx="185" cy="26" rx="5" ry="3.5" fill="#6B4423" />
+          <ellipse cx="189" cy="26" rx="2" ry="1.5" fill="#222" />
+
+          {/* Eye */}
+          <ellipse cx="175" cy="19" rx="3.5" ry="4.5" fill="#1a1a1a" />
+          <circle cx="176" cy="17" r="1.5" fill="#fff" />
+
+          {/* Ear */}
+          <ellipse cx="162" cy="12" rx="5" ry="12" fill="#8B6914" transform="rotate(10 162 12)" />
+          <ellipse cx="162" cy="12" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(10 162 12)" />
+
+          {/* Tail - up high */}
+          <path d="M45,38 Q38,28 35,18" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
+          <ellipse cx="35" cy="18" rx="4" ry="5" fill="#F3CF7A" />
+
+          {/* Back legs - trailing up */}
+          <path d="M52,52 Q38,45 28,35" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
+          <path d="M58,55 Q48,50 42,42" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
+
+          {/* Front legs - reaching down */}
+          <path d="M140,55 Q155,72 160,90" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M132,58 Q145,78 148,98" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+
+          {/* Hooves */}
+          <ellipse cx="28" cy="35" rx="3" ry="2" fill="#222" />
+          <ellipse cx="42" cy="42" rx="3" ry="2" fill="#222" />
+          <ellipse cx="160" cy="92" rx="3" ry="2" fill="#222" />
+          <ellipse cx="148" cy="100" rx="3" ry="2" fill="#222" />
+        </g>
+      </g>
+
+      {/* Frame 5 - Landing prep: compressed, angled down 40° */}
+      <g className="frame frame-5">
+        <g transform="rotate(40 100 50)">
+          {/* Body - compressed for impact */}
+          <ellipse cx="100" cy="45" rx="40" ry="22" fill="#8B6914" />
+          {/* Underbelly */}
+          <ellipse cx="100" cy="54" rx="34" ry="15" fill="#F3CF7A" />
+          {/* Haunch - high */}
+          <ellipse cx="68" cy="42" rx="20" ry="18" fill="#8B6914" />
+          {/* Shoulder - low */}
+          <ellipse cx="128" cy="48" rx="16" ry="16" fill="#8B6914" />
+
+          {/* Neck - curved down */}
+          <path d="M138,48 Q150,40 158,35" stroke="#8B6914" strokeWidth="14" fill="none" strokeLinecap="round" />
+
+          {/* Head */}
+          <ellipse cx="165" cy="32" rx="13" ry="10" fill="#8B6914" />
+          <ellipse cx="171" cy="34" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
+          <ellipse cx="178" cy="36" rx="5" ry="3.5" fill="#6B4423" />
+          <ellipse cx="182" cy="36" rx="2" ry="1.5" fill="#222" />
+
+          {/* Eye */}
+          <ellipse cx="168" cy="29" rx="3.5" ry="4.5" fill="#1a1a1a" />
+          <circle cx="169" cy="27" r="1.5" fill="#fff" />
+
+          {/* Ear */}
+          <ellipse cx="155" cy="22" rx="5" ry="12" fill="#8B6914" transform="rotate(5 155 22)" />
+          <ellipse cx="155" cy="22" rx="2.5" ry="8" fill="#FFDAB9" transform="rotate(5 155 22)" />
+
+          {/* Tail - high up */}
+          <path d="M52,38 Q42,25 38,15" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
+          <ellipse cx="38" cy="15" rx="4" ry="5" fill="#F3CF7A" />
+
+          {/* Back legs - tucked up high */}
+          <path d="M58,55 Q45,42 40,32" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M68,58 Q58,48 55,38" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
+
+          {/* Front legs - reaching for ground */}
+          <path d="M135,62 Q148,82 145,102" stroke="#6B4423" strokeWidth="7" fill="none" strokeLinecap="round" />
+          <path d="M125,65 Q135,88 130,108" stroke="#6B4423" strokeWidth="7" fill="none" strokeLinecap="round" />
+
+          {/* Hooves */}
+          <ellipse cx="40" cy="32" rx="3" ry="2" fill="#222" />
+          <ellipse cx="55" cy="38" rx="3" ry="2" fill="#222" />
+          <ellipse cx="145" cy="104" rx="3" ry="2" fill="#222" />
+          <ellipse cx="130" cy="110" rx="3" ry="2" fill="#222" />
+        </g>
       </g>
     </svg>
   );
@@ -169,9 +272,9 @@ export default function DeerAnimation() {
     const spawnDeer = () => {
       const newDeer: Deer = {
         id: Date.now(),
-        top: Math.random() * 30 + 40,
-        duration: Math.random() * 2 + 4,
-        size: Math.random() * 0.3 + 0.8,
+        top: Math.random() * 20 + 45,
+        duration: Math.random() * 2 + 5,
+        size: Math.random() * 0.3 + 0.7,
         direction: Math.random() > 0.5 ? "left" : "right",
       };
 
@@ -205,7 +308,7 @@ export default function DeerAnimation() {
           }}
         >
           <div style={{ transform: `scale(${deer.size})` }}>
-            <RunningDoe />
+            <LeapingDeer />
           </div>
         </div>
       ))}
@@ -224,101 +327,131 @@ export default function DeerAnimation() {
 
         .deer {
           position: absolute;
-          width: 288px;  /* 3 inches at 96dpi */
-          height: 216px; /* Taller to show full deer head */
-          opacity: 0.85;
+          width: 320px;
+          height: 280px;
+          opacity: 0.9;
           animation-timing-function: linear;
           animation-fill-mode: forwards;
         }
 
         .deer-right {
-          left: -300px;
+          left: -350px;
           animation-name: runRight;
         }
 
         .deer-left {
-          right: -300px;
+          right: -350px;
           animation-name: runLeft;
         }
 
         .deer-right .deer-svg {
-          animation: sineWaveRight var(--deer-duration) linear forwards;
+          animation: leapBounceRight var(--deer-duration) linear forwards;
         }
 
         .deer-left .deer-svg {
-          animation: sineWaveLeft var(--deer-duration) linear forwards;
+          transform: scaleX(-1);
+          animation: leapBounceLeft var(--deer-duration) linear forwards;
         }
 
         .deer-svg {
           width: 100%;
           height: 100%;
-          transform-origin: 50% 57%; /* Pivot at torso center */
         }
 
-        /* Frame animation - 3 frames for smooth gallop */
+        /* 5-frame animation cycle synced with leap phases */
         .frame {
           opacity: 0;
         }
 
-        .frame-1 { animation: frame3 0.36s step-end infinite; animation-delay: 0s; }
-        .frame-2 { animation: frame3 0.36s step-end infinite; animation-delay: -0.24s; }
-        .frame-3 { animation: frame3 0.36s step-end infinite; animation-delay: -0.12s; }
+        /* Each frame shows for 20% of the leap cycle (5 frames) */
+        .frame-1 { animation: frame5cycle 0.5s step-end infinite; animation-delay: 0s; }
+        .frame-2 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.4s; }
+        .frame-3 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.3s; }
+        .frame-4 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.2s; }
+        .frame-5 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.1s; }
 
-        @keyframes frame3 {
-          0%, 33.33% { opacity: 1; }
-          33.34%, 100% { opacity: 0; }
+        @keyframes frame5cycle {
+          0%, 20% { opacity: 1; }
+          20.01%, 100% { opacity: 0; }
         }
 
         @keyframes runRight {
-          from { left: -300px; }
-          to { left: calc(100% + 300px); }
+          from { left: -350px; }
+          to { left: calc(100% + 350px); }
         }
 
         @keyframes runLeft {
-          from { right: -300px; }
-          to { right: calc(100% + 300px); }
+          from { right: -350px; }
+          to { right: calc(100% + 350px); }
         }
 
-        /* Sine wave with 40deg rotation - deer tilts up when ascending, down when descending */
-        /* 4 complete waves across the screen, rotation follows velocity (cosine of position) */
-        @keyframes sineWaveRight {
-          0% { transform: translateY(0) rotate(-40deg); }
-          6.25% { transform: translateY(-60px) rotate(0deg); }
-          12.5% { transform: translateY(0) rotate(40deg); }
-          18.75% { transform: translateY(60px) rotate(0deg); }
-          25% { transform: translateY(0) rotate(-40deg); }
-          31.25% { transform: translateY(-60px) rotate(0deg); }
-          37.5% { transform: translateY(0) rotate(40deg); }
-          43.75% { transform: translateY(60px) rotate(0deg); }
-          50% { transform: translateY(0) rotate(-40deg); }
-          56.25% { transform: translateY(-60px) rotate(0deg); }
-          62.5% { transform: translateY(0) rotate(40deg); }
-          68.75% { transform: translateY(60px) rotate(0deg); }
-          75% { transform: translateY(0) rotate(-40deg); }
-          81.25% { transform: translateY(-60px) rotate(0deg); }
-          87.5% { transform: translateY(0) rotate(40deg); }
-          93.75% { transform: translateY(60px) rotate(0deg); }
-          100% { transform: translateY(0) rotate(-40deg); }
+        /* Vertical bounce synced with leap - 5 leaps across screen */
+        @keyframes leapBounceRight {
+          /* Leap 1 */
+          0% { transform: translateY(0); }
+          4% { transform: translateY(-50px); }
+          8% { transform: translateY(-80px); }
+          12% { transform: translateY(-50px); }
+          16% { transform: translateY(0); }
+          /* Leap 2 */
+          20% { transform: translateY(0); }
+          24% { transform: translateY(-50px); }
+          28% { transform: translateY(-80px); }
+          32% { transform: translateY(-50px); }
+          36% { transform: translateY(0); }
+          /* Leap 3 */
+          40% { transform: translateY(0); }
+          44% { transform: translateY(-50px); }
+          48% { transform: translateY(-80px); }
+          52% { transform: translateY(-50px); }
+          56% { transform: translateY(0); }
+          /* Leap 4 */
+          60% { transform: translateY(0); }
+          64% { transform: translateY(-50px); }
+          68% { transform: translateY(-80px); }
+          72% { transform: translateY(-50px); }
+          76% { transform: translateY(0); }
+          /* Leap 5 */
+          80% { transform: translateY(0); }
+          84% { transform: translateY(-50px); }
+          88% { transform: translateY(-80px); }
+          92% { transform: translateY(-50px); }
+          96% { transform: translateY(0); }
+          100% { transform: translateY(0); }
         }
 
-        @keyframes sineWaveLeft {
-          0% { transform: scaleX(-1) translateY(0) rotate(40deg); }
-          6.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
-          12.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
-          18.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
-          25% { transform: scaleX(-1) translateY(0) rotate(40deg); }
-          31.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
-          37.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
-          43.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
-          50% { transform: scaleX(-1) translateY(0) rotate(40deg); }
-          56.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
-          62.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
-          68.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
-          75% { transform: scaleX(-1) translateY(0) rotate(40deg); }
-          81.25% { transform: scaleX(-1) translateY(-60px) rotate(0deg); }
-          87.5% { transform: scaleX(-1) translateY(0) rotate(-40deg); }
-          93.75% { transform: scaleX(-1) translateY(60px) rotate(0deg); }
-          100% { transform: scaleX(-1) translateY(0) rotate(40deg); }
+        @keyframes leapBounceLeft {
+          /* Leap 1 */
+          0% { transform: scaleX(-1) translateY(0); }
+          4% { transform: scaleX(-1) translateY(-50px); }
+          8% { transform: scaleX(-1) translateY(-80px); }
+          12% { transform: scaleX(-1) translateY(-50px); }
+          16% { transform: scaleX(-1) translateY(0); }
+          /* Leap 2 */
+          20% { transform: scaleX(-1) translateY(0); }
+          24% { transform: scaleX(-1) translateY(-50px); }
+          28% { transform: scaleX(-1) translateY(-80px); }
+          32% { transform: scaleX(-1) translateY(-50px); }
+          36% { transform: scaleX(-1) translateY(0); }
+          /* Leap 3 */
+          40% { transform: scaleX(-1) translateY(0); }
+          44% { transform: scaleX(-1) translateY(-50px); }
+          48% { transform: scaleX(-1) translateY(-80px); }
+          52% { transform: scaleX(-1) translateY(-50px); }
+          56% { transform: scaleX(-1) translateY(0); }
+          /* Leap 4 */
+          60% { transform: scaleX(-1) translateY(0); }
+          64% { transform: scaleX(-1) translateY(-50px); }
+          68% { transform: scaleX(-1) translateY(-80px); }
+          72% { transform: scaleX(-1) translateY(-50px); }
+          76% { transform: scaleX(-1) translateY(0); }
+          /* Leap 5 */
+          80% { transform: scaleX(-1) translateY(0); }
+          84% { transform: scaleX(-1) translateY(-50px); }
+          88% { transform: scaleX(-1) translateY(-80px); }
+          92% { transform: scaleX(-1) translateY(-50px); }
+          96% { transform: scaleX(-1) translateY(0); }
+          100% { transform: scaleX(-1) translateY(0); }
         }
       `}</style>
     </div>
