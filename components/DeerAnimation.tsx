@@ -303,9 +303,8 @@ export default function DeerAnimation() {
           style={{
             top: `${deer.top}%`,
             animationDuration: `${deer.duration}s`,
-            // @ts-expect-error CSS custom property
+            // @ts-expect-error CSS custom properties
             "--deer-duration": `${deer.duration}s`,
-            // @ts-expect-error CSS custom property
             "--leap-duration": `${deer.duration * 0.4}s`,
           }}
         >
