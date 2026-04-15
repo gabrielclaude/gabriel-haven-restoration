@@ -363,12 +363,12 @@ export default function DeerAnimation() {
           opacity: 0;
         }
 
-        /* Each frame shows for 20% of the leap cycle (5 frames) */
-        .frame-1 { animation: frame5cycle 0.5s step-end infinite; animation-delay: 0s; }
-        .frame-2 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.4s; }
-        .frame-3 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.3s; }
-        .frame-4 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.2s; }
-        .frame-5 { animation: frame5cycle 0.5s step-end infinite; animation-delay: -0.1s; }
+        /* Each frame shows for 20% of the leap cycle (5 frames) - 1.25s total = 0.25s per frame */
+        .frame-1 { animation: frame5cycle 1.25s step-end infinite; animation-delay: 0s; }
+        .frame-2 { animation: frame5cycle 1.25s step-end infinite; animation-delay: -1.0s; }
+        .frame-3 { animation: frame5cycle 1.25s step-end infinite; animation-delay: -0.75s; }
+        .frame-4 { animation: frame5cycle 1.25s step-end infinite; animation-delay: -0.5s; }
+        .frame-5 { animation: frame5cycle 1.25s step-end infinite; animation-delay: -0.25s; }
 
         @keyframes frame5cycle {
           0%, 20% { opacity: 1; }
@@ -385,72 +385,48 @@ export default function DeerAnimation() {
           to { right: calc(100% + 350px); }
         }
 
-        /* Vertical bounce synced with leap - 5 leaps across screen */
+        /* Vertical bounce synced with leap - 3 leaps across screen for longer duration per leap */
         @keyframes leapBounceRight {
           /* Leap 1 */
           0% { transform: translateY(0); }
-          4% { transform: translateY(-50px); }
-          8% { transform: translateY(-80px); }
-          12% { transform: translateY(-50px); }
-          16% { transform: translateY(0); }
+          6.6% { transform: translateY(-50px); }
+          13.3% { transform: translateY(-90px); }
+          20% { transform: translateY(-50px); }
+          26.6% { transform: translateY(0); }
           /* Leap 2 */
-          20% { transform: translateY(0); }
-          24% { transform: translateY(-50px); }
-          28% { transform: translateY(-80px); }
-          32% { transform: translateY(-50px); }
-          36% { transform: translateY(0); }
-          /* Leap 3 */
-          40% { transform: translateY(0); }
-          44% { transform: translateY(-50px); }
-          48% { transform: translateY(-80px); }
-          52% { transform: translateY(-50px); }
-          56% { transform: translateY(0); }
-          /* Leap 4 */
+          33.3% { transform: translateY(0); }
+          40% { transform: translateY(-50px); }
+          46.6% { transform: translateY(-90px); }
+          53.3% { transform: translateY(-50px); }
           60% { transform: translateY(0); }
-          64% { transform: translateY(-50px); }
-          68% { transform: translateY(-80px); }
-          72% { transform: translateY(-50px); }
-          76% { transform: translateY(0); }
-          /* Leap 5 */
-          80% { transform: translateY(0); }
-          84% { transform: translateY(-50px); }
-          88% { transform: translateY(-80px); }
-          92% { transform: translateY(-50px); }
-          96% { transform: translateY(0); }
+          /* Leap 3 */
+          66.6% { transform: translateY(0); }
+          73.3% { transform: translateY(-50px); }
+          80% { transform: translateY(-90px); }
+          86.6% { transform: translateY(-50px); }
+          93.3% { transform: translateY(0); }
           100% { transform: translateY(0); }
         }
 
         @keyframes leapBounceLeft {
           /* Leap 1 */
           0% { transform: scaleX(-1) translateY(0); }
-          4% { transform: scaleX(-1) translateY(-50px); }
-          8% { transform: scaleX(-1) translateY(-80px); }
-          12% { transform: scaleX(-1) translateY(-50px); }
-          16% { transform: scaleX(-1) translateY(0); }
+          6.6% { transform: scaleX(-1) translateY(-50px); }
+          13.3% { transform: scaleX(-1) translateY(-90px); }
+          20% { transform: scaleX(-1) translateY(-50px); }
+          26.6% { transform: scaleX(-1) translateY(0); }
           /* Leap 2 */
-          20% { transform: scaleX(-1) translateY(0); }
-          24% { transform: scaleX(-1) translateY(-50px); }
-          28% { transform: scaleX(-1) translateY(-80px); }
-          32% { transform: scaleX(-1) translateY(-50px); }
-          36% { transform: scaleX(-1) translateY(0); }
-          /* Leap 3 */
-          40% { transform: scaleX(-1) translateY(0); }
-          44% { transform: scaleX(-1) translateY(-50px); }
-          48% { transform: scaleX(-1) translateY(-80px); }
-          52% { transform: scaleX(-1) translateY(-50px); }
-          56% { transform: scaleX(-1) translateY(0); }
-          /* Leap 4 */
+          33.3% { transform: scaleX(-1) translateY(0); }
+          40% { transform: scaleX(-1) translateY(-50px); }
+          46.6% { transform: scaleX(-1) translateY(-90px); }
+          53.3% { transform: scaleX(-1) translateY(-50px); }
           60% { transform: scaleX(-1) translateY(0); }
-          64% { transform: scaleX(-1) translateY(-50px); }
-          68% { transform: scaleX(-1) translateY(-80px); }
-          72% { transform: scaleX(-1) translateY(-50px); }
-          76% { transform: scaleX(-1) translateY(0); }
-          /* Leap 5 */
-          80% { transform: scaleX(-1) translateY(0); }
-          84% { transform: scaleX(-1) translateY(-50px); }
-          88% { transform: scaleX(-1) translateY(-80px); }
-          92% { transform: scaleX(-1) translateY(-50px); }
-          96% { transform: scaleX(-1) translateY(0); }
+          /* Leap 3 */
+          66.6% { transform: scaleX(-1) translateY(0); }
+          73.3% { transform: scaleX(-1) translateY(-50px); }
+          80% { transform: scaleX(-1) translateY(-90px); }
+          86.6% { transform: scaleX(-1) translateY(-50px); }
+          93.3% { transform: scaleX(-1) translateY(0); }
           100% { transform: scaleX(-1) translateY(0); }
         }
       `}</style>
