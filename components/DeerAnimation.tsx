@@ -25,7 +25,7 @@ function LeapingDeer() {
           {/* Body - compressed */}
           <ellipse cx="100" cy="45" rx="38" ry="24" fill="#8B6914" />
           {/* Underbelly */}
-          <ellipse cx="100" cy="52" rx="32" ry="8" fill="#F3CF7A" />
+          <ellipse cx="100" cy="50" rx="32" ry="4" fill="#F3CF7A" />
           {/* Haunch - bunched */}
           <ellipse cx="70" cy="48" rx="22" ry="20" fill="#8B6914" />
           {/* Shoulder */}
@@ -74,7 +74,7 @@ function LeapingDeer() {
           {/* Body - stretching */}
           <ellipse cx="100" cy="42" rx="45" ry="20" fill="#8B6914" />
           {/* Underbelly */}
-          <ellipse cx="100" cy="48" rx="38" ry="7" fill="#F3CF7A" />
+          <ellipse cx="100" cy="46" rx="38" ry="4" fill="#F3CF7A" />
           {/* Haunch */}
           <ellipse cx="62" cy="44" rx="20" ry="16" fill="#8B6914" />
           {/* Shoulder */}
@@ -122,7 +122,7 @@ function LeapingDeer() {
         {/* Body - fully stretched */}
         <ellipse cx="100" cy="40" rx="50" ry="17" fill="#8B6914" />
         {/* Underbelly */}
-        <ellipse cx="100" cy="46" rx="44" ry="6" fill="#F3CF7A" />
+        <ellipse cx="100" cy="44" rx="44" ry="3" fill="#F3CF7A" />
         {/* Haunch */}
         <ellipse cx="55" cy="42" rx="18" ry="14" fill="#8B6914" />
         {/* Shoulder */}
@@ -170,7 +170,7 @@ function LeapingDeer() {
           {/* Body - arching */}
           <ellipse cx="100" cy="42" rx="45" ry="20" fill="#8B6914" />
           {/* Underbelly */}
-          <ellipse cx="100" cy="48" rx="38" ry="7" fill="#F3CF7A" />
+          <ellipse cx="100" cy="46" rx="38" ry="4" fill="#F3CF7A" />
           {/* Haunch - raised */}
           <ellipse cx="62" cy="40" rx="18" ry="16" fill="#8B6914" />
           {/* Shoulder */}
@@ -219,7 +219,7 @@ function LeapingDeer() {
           {/* Body - compressed for impact */}
           <ellipse cx="100" cy="45" rx="40" ry="22" fill="#8B6914" />
           {/* Underbelly */}
-          <ellipse cx="100" cy="51" rx="34" ry="8" fill="#F3CF7A" />
+          <ellipse cx="100" cy="49" rx="34" ry="4" fill="#F3CF7A" />
           {/* Haunch - high */}
           <ellipse cx="68" cy="42" rx="20" ry="18" fill="#8B6914" />
           {/* Shoulder - low */}
