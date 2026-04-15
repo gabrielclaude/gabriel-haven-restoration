@@ -14,13 +14,13 @@ interface Deer {
 // Size: 1.5" tall x 3" wide (144px x 288px at 96dpi) - using 2:1 aspect ratio
 function RunningDoe() {
   return (
-    <svg viewBox="0 0 200 100" className="deer-svg">
+    <svg viewBox="0 -20 200 120" className="deer-svg">
       {/* Frame 1 - Push off: back legs bunched under, front reaching forward */}
       <g className="frame frame-1">
         {/* Body - brown top */}
         <ellipse cx="100" cy="42" rx="45" ry="22" fill="#8B6914" />
         {/* Cream underbelly */}
-        <ellipse cx="100" cy="52" rx="38" ry="14" fill="#FFF8DC" />
+        <ellipse cx="100" cy="52" rx="38" ry="14" fill="#F3CF7A" />
         {/* Haunch muscle */}
         <ellipse cx="65" cy="45" rx="20" ry="18" fill="#8B6914" />
         {/* Shoulder */}
@@ -32,7 +32,7 @@ function RunningDoe() {
         {/* Head */}
         <ellipse cx="168" cy="8" rx="14" ry="10" fill="#8B6914" />
         {/* Cream face accent */}
-        <ellipse cx="175" cy="10" rx="6" ry="5" fill="#FFF8DC" opacity="0.5" />
+        <ellipse cx="175" cy="10" rx="6" ry="5" fill="#F3CF7A" opacity="0.5" />
         {/* Snout */}
         <ellipse cx="182" cy="12" rx="6" ry="4" fill="#6B4423" />
         {/* Nose */}
@@ -48,7 +48,7 @@ function RunningDoe() {
 
         {/* Small tail - up */}
         <ellipse cx="48" cy="38" rx="5" ry="6" fill="#8B6914" transform="rotate(-30 48 38)" />
-        <ellipse cx="46" cy="36" rx="3" ry="4" fill="#FFF8DC" transform="rotate(-30 46 36)" />
+        <ellipse cx="46" cy="36" rx="3" ry="4" fill="#F3CF7A" transform="rotate(-30 46 36)" />
 
         {/* Back legs - bunched under, pushing */}
         <path d="M55,58 Q45,72 40,85" stroke="#6B4423" strokeWidth="6" fill="none" strokeLinecap="round" />
@@ -70,7 +70,7 @@ function RunningDoe() {
         {/* Body - stretched horizontal */}
         <ellipse cx="100" cy="38" rx="48" ry="18" fill="#8B6914" />
         {/* Cream underbelly */}
-        <ellipse cx="100" cy="46" rx="42" ry="12" fill="#FFF8DC" />
+        <ellipse cx="100" cy="46" rx="42" ry="12" fill="#F3CF7A" />
         {/* Haunch */}
         <ellipse cx="58" cy="40" rx="18" ry="14" fill="#8B6914" />
         {/* Shoulder */}
@@ -81,7 +81,7 @@ function RunningDoe() {
 
         {/* Head - stretched forward */}
         <ellipse cx="182" cy="6" rx="13" ry="9" fill="#8B6914" />
-        <ellipse cx="188" cy="8" rx="5" ry="4" fill="#FFF8DC" opacity="0.5" />
+        <ellipse cx="188" cy="8" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
         <ellipse cx="195" cy="10" rx="5" ry="3.5" fill="#6B4423" />
         <ellipse cx="199" cy="10" rx="1.8" ry="1.3" fill="#222" />
 
@@ -95,7 +95,7 @@ function RunningDoe() {
 
         {/* Tail - streaming behind */}
         <path d="M40,38 Q30,32 22,28" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="22" cy="28" rx="4" ry="3" fill="#FFF8DC" />
+        <ellipse cx="22" cy="28" rx="4" ry="3" fill="#F3CF7A" />
 
         {/* Back legs - fully extended behind */}
         <path d="M48,50 Q30,60 15,72" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
@@ -117,7 +117,7 @@ function RunningDoe() {
         {/* Body - tilted for landing */}
         <ellipse cx="100" cy="44" rx="46" ry="20" fill="#8B6914" transform="rotate(8 100 44)" />
         {/* Cream underbelly */}
-        <ellipse cx="100" cy="52" rx="40" ry="13" fill="#FFF8DC" transform="rotate(8 100 52)" />
+        <ellipse cx="100" cy="52" rx="40" ry="13" fill="#F3CF7A" transform="rotate(8 100 52)" />
         {/* Haunch - raised */}
         <ellipse cx="60" cy="42" rx="18" ry="16" fill="#8B6914" />
         {/* Shoulder - lower */}
@@ -128,7 +128,7 @@ function RunningDoe() {
 
         {/* Head */}
         <ellipse cx="172" cy="18" rx="13" ry="10" fill="#8B6914" />
-        <ellipse cx="178" cy="20" rx="5" ry="4" fill="#FFF8DC" opacity="0.5" />
+        <ellipse cx="178" cy="20" rx="5" ry="4" fill="#F3CF7A" opacity="0.5" />
         <ellipse cx="185" cy="22" rx="5" ry="3.5" fill="#6B4423" />
         <ellipse cx="189" cy="22" rx="1.8" ry="1.3" fill="#222" />
 
@@ -142,7 +142,7 @@ function RunningDoe() {
 
         {/* Tail - up high */}
         <path d="M45,36 Q38,25 35,18" stroke="#8B6914" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="35" cy="18" rx="4" ry="5" fill="#FFF8DC" />
+        <ellipse cx="35" cy="18" rx="4" ry="5" fill="#F3CF7A" />
 
         {/* Back legs - trailing up behind */}
         <path d="M52,55 Q38,50 28,42" stroke="#6B4423" strokeWidth="5" fill="none" strokeLinecap="round" />
@@ -222,7 +222,7 @@ export default function DeerAnimation() {
         .deer {
           position: absolute;
           width: 288px;  /* 3 inches at 96dpi */
-          height: 144px; /* 1.5 inches at 96dpi */
+          height: 173px; /* Taller to show full deer head */
           opacity: 0.85;
           animation-timing-function: linear;
           animation-fill-mode: forwards;
