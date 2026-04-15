@@ -14,7 +14,7 @@ interface Deer {
 // Size: 1.5" tall x 3" wide (144px x 288px at 96dpi) - using 2:1 aspect ratio
 function RunningDoe() {
   return (
-    <svg viewBox="0 -20 200 120" className="deer-svg">
+    <svg viewBox="0 -40 200 150" className="deer-svg">
       {/* Frame 1 - Push off: back legs bunched under, front reaching forward */}
       <g className="frame frame-1">
         {/* Body - brown top */}
@@ -199,11 +199,12 @@ export default function DeerAnimation() {
           className={`deer ${deer.direction === "left" ? "deer-left" : "deer-right"}`}
           style={{
             top: `${deer.top}%`,
-            animationDuration: `${deer.duration}s`,
-            transform: `scale(${deer.size})`,
+            animationDuration: `${deer.duration}s, ${deer.duration}s`,
           }}
         >
-          <RunningDoe />
+          <div style={{ transform: `scale(${deer.size})` }}>
+            <RunningDoe />
+          </div>
         </div>
       ))}
 
@@ -222,7 +223,7 @@ export default function DeerAnimation() {
         .deer {
           position: absolute;
           width: 288px;  /* 3 inches at 96dpi */
-          height: 173px; /* Taller to show full deer head */
+          height: 216px; /* Taller to show full deer head */
           opacity: 0.85;
           animation-timing-function: linear;
           animation-fill-mode: forwards;
@@ -230,12 +231,12 @@ export default function DeerAnimation() {
 
         .deer-right {
           left: -300px;
-          animation-name: runRight;
+          animation-name: runRight, sineWave;
         }
 
         .deer-left {
           right: -300px;
-          animation-name: runLeft;
+          animation-name: runLeft, sineWave;
         }
 
         .deer-left .deer-svg {
@@ -269,6 +270,27 @@ export default function DeerAnimation() {
         @keyframes runLeft {
           from { right: -300px; }
           to { right: calc(100% + 300px); }
+        }
+
+        /* Sine wave vertical bounce - 4 complete waves across the screen */
+        @keyframes sineWave {
+          0% { transform: translateY(0); }
+          6.25% { transform: translateY(-60px); }
+          12.5% { transform: translateY(0); }
+          18.75% { transform: translateY(60px); }
+          25% { transform: translateY(0); }
+          31.25% { transform: translateY(-60px); }
+          37.5% { transform: translateY(0); }
+          43.75% { transform: translateY(60px); }
+          50% { transform: translateY(0); }
+          56.25% { transform: translateY(-60px); }
+          62.5% { transform: translateY(0); }
+          68.75% { transform: translateY(60px); }
+          75% { transform: translateY(0); }
+          81.25% { transform: translateY(-60px); }
+          87.5% { transform: translateY(0); }
+          93.75% { transform: translateY(60px); }
+          100% { transform: translateY(0); }
         }
       `}</style>
     </div>
