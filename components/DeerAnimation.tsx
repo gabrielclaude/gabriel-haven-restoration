@@ -18,7 +18,7 @@ interface Deer {
 // Frame 5: Landing prep (compressed, angled down 40°)
 function LeapingDeer() {
   return (
-    <svg viewBox="0 -60 200 180" className="deer-svg">
+    <svg viewBox="0 -60 230 180" className="deer-svg">
       {/* Frame 1 - Push-off: compressed body, back legs pushing, angled up 40° */}
       <g className="frame frame-1">
         <g transform="rotate(-40 100 50)">
