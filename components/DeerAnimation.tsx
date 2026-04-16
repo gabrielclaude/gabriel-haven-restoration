@@ -24,10 +24,10 @@ function LeapingDeer() {
         <g transform="rotate(-40 100 50)">
           {/* Body - compressed */}
           <ellipse cx="100" cy="45" rx="38" ry="24" fill="#8B6914" />
-          {/* Underbelly */}
-          <ellipse cx="100" cy="50" rx="32" ry="4" fill="#F3CF7A" />
-          {/* Haunch - bunched */}
-          <ellipse cx="70" cy="48" rx="22" ry="20" fill="#8B6914" />
+          {/* Underbelly - extends to bottom */}
+          <ellipse cx="105" cy="60" rx="30" ry="9" fill="#F3CF7A" />
+          {/* Haunch - bunched, thinner */}
+          <ellipse cx="70" cy="48" rx="16" ry="18" fill="#8B6914" />
           {/* Shoulder */}
           <ellipse cx="125" cy="42" rx="16" ry="18" fill="#8B6914" />
 
@@ -73,10 +73,10 @@ function LeapingDeer() {
         <g transform="rotate(-40 100 50)">
           {/* Body - stretching */}
           <ellipse cx="100" cy="42" rx="45" ry="20" fill="#8B6914" />
-          {/* Underbelly */}
-          <ellipse cx="100" cy="46" rx="38" ry="4" fill="#F3CF7A" />
-          {/* Haunch */}
-          <ellipse cx="62" cy="44" rx="20" ry="16" fill="#8B6914" />
+          {/* Underbelly - extends to bottom */}
+          <ellipse cx="105" cy="54" rx="38" ry="8" fill="#F3CF7A" />
+          {/* Haunch - thinner */}
+          <ellipse cx="62" cy="44" rx="14" ry="14" fill="#8B6914" />
           {/* Shoulder */}
           <ellipse cx="135" cy="40" rx="15" ry="15" fill="#8B6914" />
 
@@ -121,10 +121,10 @@ function LeapingDeer() {
       <g className="frame frame-3">
         {/* Body - fully stretched */}
         <ellipse cx="100" cy="40" rx="50" ry="17" fill="#8B6914" />
-        {/* Underbelly */}
-        <ellipse cx="100" cy="44" rx="44" ry="3" fill="#F3CF7A" />
-        {/* Haunch */}
-        <ellipse cx="55" cy="42" rx="18" ry="14" fill="#8B6914" />
+        {/* Underbelly - extends to bottom */}
+        <ellipse cx="105" cy="50" rx="44" ry="7" fill="#F3CF7A" />
+        {/* Haunch - thinner */}
+        <ellipse cx="55" cy="42" rx="12" ry="12" fill="#8B6914" />
         {/* Shoulder */}
         <ellipse cx="142" cy="38" rx="14" ry="14" fill="#8B6914" />
 
@@ -169,10 +169,10 @@ function LeapingDeer() {
         <g transform="rotate(40 100 50)">
           {/* Body - arching */}
           <ellipse cx="100" cy="42" rx="45" ry="20" fill="#8B6914" />
-          {/* Underbelly */}
-          <ellipse cx="100" cy="46" rx="38" ry="4" fill="#F3CF7A" />
-          {/* Haunch - raised */}
-          <ellipse cx="62" cy="40" rx="18" ry="16" fill="#8B6914" />
+          {/* Underbelly - extends to bottom */}
+          <ellipse cx="105" cy="54" rx="38" ry="8" fill="#F3CF7A" />
+          {/* Haunch - raised, thinner */}
+          <ellipse cx="62" cy="40" rx="14" ry="14" fill="#8B6914" />
           {/* Shoulder */}
           <ellipse cx="135" cy="44" rx="15" ry="15" fill="#8B6914" />
 
@@ -218,10 +218,10 @@ function LeapingDeer() {
         <g transform="rotate(40 100 50)">
           {/* Body - compressed for impact */}
           <ellipse cx="100" cy="45" rx="40" ry="22" fill="#8B6914" />
-          {/* Underbelly */}
-          <ellipse cx="100" cy="49" rx="34" ry="4" fill="#F3CF7A" />
-          {/* Haunch - high */}
-          <ellipse cx="68" cy="42" rx="20" ry="18" fill="#8B6914" />
+          {/* Underbelly - extends to bottom */}
+          <ellipse cx="105" cy="58" rx="32" ry="9" fill="#F3CF7A" />
+          {/* Haunch - high, thinner */}
+          <ellipse cx="68" cy="42" rx="15" ry="16" fill="#8B6914" />
           {/* Shoulder - low */}
           <ellipse cx="128" cy="48" rx="16" ry="16" fill="#8B6914" />
 
